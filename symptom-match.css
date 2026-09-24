@@ -26,13 +26,124 @@
 [data-theme="light"] {
   --bg-deep: #f1f5f9;
   --bg-surface: #ffffff;
-  --bg-card: rgba(255, 255, 255, 0.9);
-  --bg-card-hover: #ffffff;
-  --border-subtle: rgba(0, 0, 0, 0.08);
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --border-subtle: rgba(0, 0, 0, 0.1);
   --border-active: #0284c7;
   --text-main: #0f172a;
   --text-muted: #475569;
-  --text-dim: #94a3b8;
+  --text-dim: #64748b;
+}
+
+[data-theme="light"] .sm-intro-title {
+  background: linear-gradient(135deg, #0f172a 35%, #0284c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .sm-intro-card {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .sm-intro-stats {
+  background: #f8fafc;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .sm-stat-box strong {
+  color: #d97706;
+}
+
+[data-theme="light"] .sm-stat-box span {
+  color: #64748b;
+  font-weight: 600;
+}
+
+[data-theme="light"] .sm-header {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .sm-btn-icon,
+[data-theme="light"] .sm-btn-back {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #0f172a;
+}
+
+[data-theme="light"] .sm-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .sm-card:hover {
+  background: #f8fafc;
+  border-color: #38bdf8;
+}
+
+[data-theme="light"] .sm-card.is-selected {
+  background: #f0f9ff;
+  border-color: #0284c7;
+  box-shadow: 0 0 16px rgba(2, 132, 199, 0.25);
+}
+
+[data-theme="light"] .sm-card.is-connected {
+  background: #f8fafc;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .sm-socket {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+}
+
+[data-theme="light"] .sm-socket::after {
+  background: #94a3b8;
+}
+
+[data-theme="light"] .sm-status-bar {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .sm-instructions-banner {
+  background: rgba(2, 132, 199, 0.06);
+  border-color: rgba(2, 132, 199, 0.2);
+  color: #334155;
+}
+
+[data-theme="light"] .sm-btn-secondary {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #0f172a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .sm-btn-secondary:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+[data-theme="light"] .sm-modal-backdrop {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+[data-theme="light"] .sm-modal-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="light"] .sm-score-banner {
+  background: #f8fafc;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .sm-review-item {
+  background: #f8fafc;
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 * {

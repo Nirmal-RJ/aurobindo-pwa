@@ -14,9 +14,9 @@
   <link rel="apple-touch-icon" href="./icons/icon-192.png">
   <link rel="manifest" href="./manifest.webmanifest">
   <script>try { const t = localStorage.getItem('aurobindo-theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t } catch { }</script>
-  <link rel="stylesheet" href="./styles.css?v=13">
+  <link rel="stylesheet" href="./styles.css?v=15">
   <script src="./tile-match.js?v=11" defer></script>
-  <script src="./app.js?v=13" defer></script>
+  <script src="./app.js?v=15" defer></script>
 </head>
 
 <body>
@@ -126,10 +126,10 @@
           <div class="hero-eyebrow"><svg class="icon">
               <use href="#i-spark" />
             </svg><span data-i18n="heroEyebrow">BIG ENERGY. ONE FAMILY.</span></div>
-          <h1 id="hero-title"><span data-i18n="heroLineOne">Your spotlight.</span><span class="gold-text"
-              data-i18n="heroLineTwo">Our celebration.</span></h1>
-          <p data-i18n="heroDescription">A little cinema, a little competition, and a whole lot of us.<br>Welcome to the
-            fun side of Aurobindo Pharmacy.</p>
+          <h1 id="hero-title" class="sr-only">HPLC Celebrity League</h1>
+          <div class="hero-logo-wrap">
+            <img src="./assets/hpcl-logo.png" alt="HPLC Celebrity League" class="hero-hpcl-logo" width="500" height="500">
+          </div>
           <div class="hero-bottom"><span class="hero-rule"></span><span data-i18n="heroBottom">Play together. Shine
               together.</span><svg class="icon">
               <use href="#i-spark" />
