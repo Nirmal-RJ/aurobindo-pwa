@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ecf4f6">
+  <title>Cleaning Solution Pairing · Aurobindo Pharmacy</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="cleaning-solution.css?v=6">
+  <script src="cleaning-solution.js?v=6" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="index.html#/games"><img src="logo.png" alt="Aurobindo Pharmacy"><span>Aurobindo Pharmacy<small>GAME 01 · LAB CHALLENGE</small></span></a><a class="back" href="index.html#/games">← <span>Back to Games</span></a></header>
+  <main>
+    <section id="intro" class="panel intro" aria-labelledby="title">
+      <span class="eyebrow">A LITTLE MIX. THE RIGHT MATCH.</span>
+      <div class="sample-tiles" aria-hidden="true"><span>Water<strong>90%</strong></span><span>ACN<strong>5%</strong></span><span>MeOH<strong>5%</strong></span></div>
+      <h1 id="title">Cleaning Solution<br><em>Pairing</em></h1>
+      <p>Select the right solvents and percentages to prepare the given cleaning solution.</p>
+      <div class="facts"><span><strong>4</strong> questions</span><span><strong>30 sec</strong> per question</span></div>
+      <button id="play" class="primary">Play <span aria-hidden="true">→</span></button>
+    </section>
+    <section id="game" class="panel" hidden aria-labelledby="question" tabindex="-1">
+      <div class="game-meta"><span id="progress" class="eyebrow"></span><span id="difficulty" class="difficulty">Guided</span><span id="running-score"></span></div>
+      <h1 id="question"></h1>
+      <div class="timer-label"><span>Prepare the solution</span><strong id="seconds">30 sec</strong></div>
+      <div id="timer" class="timer" role="progressbar" aria-label="Time remaining" aria-valuemin="0" aria-valuemax="30" aria-valuenow="30"><div id="timer-fill"></div></div>
+      <div class="tray-heading"><span class="eyebrow">SOLVENT TRAY</span><span>Drag a tile, or tap to select</span></div>
+      <div id="tray" class="tray" aria-label="Available solvent tiles"></div>
+      <div id="review-banner" class="review-banner" hidden>
+        <span id="review-icon" class="review-icon" aria-hidden="true">✓</span>
+        <strong id="review-outcome"></strong>
+        <span id="review-detail"></span>
+      </div>
+      <div class="recipe-heading"><h2 id="solution-title">Your solution</h2><span id="solution-order">Place in the correct order →</span><button id="check-solution" class="primary" hidden>Check solution</button></div>
+      <div id="slots" class="slots" data-mix aria-label="Solution in order"></div>
+      <p id="game-hint" class="hint">Tap tile → tap slot. Tap a filled slot to remove.</p>
+      <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+      <div id="review-countdown" class="review-countdown" hidden aria-hidden="true"><div id="review-fill"></div></div>
+    </section>
+    <section id="report" class="panel report" hidden aria-labelledby="report-title" tabindex="-1">
+      <span class="eyebrow">CHALLENGE COMPLETE</span><h1 id="report-title">Your results</h1>
+      <div class="score-circle"><strong id="final-score"></strong><span>OUT OF 4</span></div>
+      <p id="report-message"></p><div id="results" class="results"></div>
+      <div class="actions"><button id="retry" class="primary">Retry ↻</button><a class="button" href="index.html#/games">Exit</a><button id="find-answers" class="button">Find answers</button></div>
+    </section>
+    <section id="answers" class="panel" hidden aria-labelledby="answers-title" tabindex="-1">
+      <span class="eyebrow">THE RIGHT MIX</span><h1 id="answers-title">Correct answers</h1><p>Solvents and percentages, in the correct order.</p><div id="answer-list"></div><button id="back-results" class="primary">Back to results</button>
+    </section>
+  </main>
+</body>
+</html>
