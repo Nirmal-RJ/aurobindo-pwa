@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f8f4ff">
+  <meta name="description" content="The Aurobindo Pharmacy community hub. Celebrate, play and shine together.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Aurobindo Pharmacy · The Celebration Hub</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <script>try{const t=localStorage.getItem('aurobindo-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch{}</script>
+  <link rel="stylesheet" href="./styles.css?v=6">
+  <script src="./app.js?v=6" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content" data-i18n="skip">Skip to content</a>
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.6 6.4L21 12l-6.4 2.6L12 21l-2.6-6.4L3 12l6.4-2.6L12 3Z"/></symbol>
+    <symbol id="i-masks" viewBox="0 0 32 32"><path d="M4 6c5 3 10 3 15 0v10c0 5-4 8-7.5 10C8 24 4 21 4 16V6Z"/><path d="M8 12h2m4 0h2m-8 5c2 3 5 3 7 0M20 11c3 0 5-1 8-2v10c0 5-4 8-7.5 10-2-1-4-2-5-4m6-10h2m-4 8c1-2 3-2 4-1"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 32 32"><path d="M9 4h14v9c0 6-3 9-7 9s-7-3-7-9V4Zm0 3H4v5c0 4 3 6 7 6m12-11h5v5c0 4-3 6-7 6m-5 4v6m-6 0h12"/><path d="m16 8 1.2 2.4 2.8.4-2 2 .5 2.8-2.5-1.3-2.5 1.3.5-2.8-2-2 2.8-.4L16 8Z"/></symbol>
+    <symbol id="i-game" viewBox="0 0 32 32"><path d="M11 9h10c5 0 8 7 8 13 0 4-4 6-7 2l-2-3h-8l-2 3c-3 4-7 2-7-2 0-6 3-13 8-13Z"/><path d="M10 12v7m-3.5-3.5h7M21 14h.1M25 18h.1M16 9V5h5"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 32 32"><path d="M5 28V17h7v11m1 0V10h7v18m1 0V4h7v24M3 28h27"/></symbol>
+    <symbol id="i-people" viewBox="0 0 32 32"><circle cx="16" cy="10" r="5"/><path d="M7 28v-3a9 9 0 0 1 18 0v3M6 7a4 4 0 0 0 0 8m20-8a4 4 0 0 1 0 8M3 24v-2a6 6 0 0 1 5-6m21 8v-2a6 6 0 0 0-5-6"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 32 32"><path d="M4 9h6l2-4h8l2 4h6v18H4V9Z"/><circle cx="16" cy="18" r="6"/><path d="M25 13h.1"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+  </svg>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand" aria-label="Aurobindo Pharmacy">
+        <div class="brand-logo"><img src="./logo.png" alt="Aurobindo — Committed to healthier life!" width="618" height="350"></div>
+        <div class="brand-copy"><strong data-i18n="pharmacy">PHARMACY</strong><span data-i18n="community">Our people. Our stage.</span></div>
+      </div>
+      <div class="header-controls">
+        <div class="language-control">
+          <button class="language-trigger" id="language" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="language-menu" aria-labelledby="language-label language-current">
+            <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
+            <span id="language-label" class="sr-only" data-i18n="language">Language</span><span id="language-current">English</span>
+            <svg class="language-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="language-menu" id="language-menu" role="menu" aria-labelledby="language-label" hidden>
+            <button type="button" role="menuitemradio" aria-checked="true" data-language="en"><span class="language-code">EN</span><span lang="en">English</span><span class="language-check" aria-hidden="true">✓</span></button>
+            <button type="button" role="menuitemradio" aria-checked="false" data-language="te"><span class="language-code">TE</span><span lang="te">తెలుగు</span><span class="language-check" aria-hidden="true">✓</span></button>
+            <button type="button" role="menuitemradio" aria-checked="false" data-language="hi"><span class="language-code">HI</span><span lang="hi">हिन्दी</span><span class="language-check" aria-hidden="true">✓</span></button>
+          </div>
+        </div>
+        <span class="control-divider"></span>
+        <div class="theme-switch" role="group" aria-label="Color theme" data-i18n-aria="theme"><button type="button" data-set-theme="light" aria-label="Light theme" data-i18n-aria="light" aria-pressed="true"><svg class="icon"><use href="#i-sun"/></svg></button><button type="button" data-set-theme="dark" aria-label="Dark theme" data-i18n-aria="dark" aria-pressed="false"><svg class="icon"><use href="#i-moon"/></svg></button></div>
+      </div>
+    </div>
+  </header>
+  <main class="page-shell" id="main-content" tabindex="-1">
+    <div id="home-view">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grain"></div><div class="hero-beam beam-one"></div><div class="hero-beam beam-two"></div>
+      <div class="hero-confetti" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="hero-copy">
+        <div class="hero-eyebrow"><svg class="icon"><use href="#i-spark"/></svg><span data-i18n="heroEyebrow">BIG ENERGY. ONE FAMILY.</span></div>
+        <h1 id="hero-title"><span data-i18n="heroLineOne">Your spotlight.</span><span class="gold-text" data-i18n="heroLineTwo">Our celebration.</span></h1>
+        <p data-i18n="heroDescription">A little cinema, a little competition, and a whole lot of us.<br>Welcome to the fun side of Aurobindo Pharmacy.</p>
+        <div class="hero-bottom"><span class="hero-rule"></span><span data-i18n="heroBottom">Play together. Shine together.</span><svg class="icon"><use href="#i-spark"/></svg></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg class="stage-art" viewBox="0 0 560 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cup" x1="208" y1="70" x2="332" y2="230" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF4BC"/><stop offset=".28" stop-color="#F7D078"/><stop offset=".57" stop-color="#C58A32"/><stop offset=".78" stop-color="#FFE8A4"/><stop offset="1" stop-color="#D79C47"/></linearGradient>
+            <linearGradient id="stem" x1="254" y1="212" x2="300" y2="287"><stop stop-color="#EEBD62"/><stop offset=".48" stop-color="#FFF0B6"/><stop offset="1" stop-color="#A66A29"/></linearGradient>
+            <linearGradient id="podium" x1="184" y1="283" x2="346" y2="383"><stop stop-color="#244948"/><stop offset="1" stop-color="#0D232D"/></linearGradient>
+            <linearGradient id="film" x1="348" y1="161" x2="432" y2="291"><stop stop-color="#3C6861"/><stop offset="1" stop-color="#142D34"/></linearGradient>
+            <radialGradient id="aura"><stop stop-color="#F4CE75" stop-opacity=".19"/><stop offset="1" stop-color="#F4CE75" stop-opacity="0"/></radialGradient>
+            <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-opacity=".35"/></filter>
+          </defs>
+          <ellipse cx="285" cy="205" rx="222" ry="195" fill="url(#aura)"/>
+          <g opacity=".35" stroke="#8CA499"><ellipse cx="282" cy="218" rx="186" ry="133" stroke-dasharray="2 9"/><path d="M77 286c80 39 277 36 386-21"/></g>
+          <g fill="#F3CE81"><path d="m168 94 4 10 10 4-10 4-4 10-4-10-10-4 10-4 4-10Z"/><path d="m406 77 3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8Z"/><path d="m452 239 3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7Z"/><circle cx="219" cy="51" r="2"/><circle cx="362" cy="46" r="2"/><circle cx="116" cy="212" r="2"/><circle cx="465" cy="170" r="2"/></g>
+          <g stroke-width="4"><path d="m124 136 8-12m292-7 9 6M387 311l10 5" stroke="#63BCA5"/><path d="m352 73 3-10M144 252l-7 9m294-69 8-6" stroke="#D69B57"/><path d="m191 53-5-8m276 157 6 8" stroke="#C77889"/></g>
+          <ellipse cx="282" cy="359" rx="190" ry="28" fill="#07161E" opacity=".65"/>
+          <path d="M145 321h88v40h-88z" fill="#19343C"/><ellipse cx="189" cy="321" rx="44" ry="12" fill="#2C4C4C"/><ellipse cx="189" cy="361" rx="44" ry="12" fill="#19343C"/>
+          <path d="M339 318h78v42h-78z" fill="#19343C"/><ellipse cx="378" cy="318" rx="39" ry="11" fill="#2C4C4C"/><ellipse cx="378" cy="360" rx="39" ry="11" fill="#19343C"/>
+          <g transform="rotate(17 387 222)" filter="url(#shadow)"><circle cx="387" cy="216" r="59" fill="url(#film)" stroke="#669084" stroke-width="2"/><circle cx="387" cy="216" r="9" fill="#A5B6A0"/><g fill="#0D222C" stroke="#52776D"><circle cx="386" cy="181" r="14"/><circle cx="420" cy="205" r="14"/><circle cx="407" cy="245" r="14"/><circle cx="365" cy="244" r="14"/><circle cx="353" cy="204" r="14"/></g><path d="M439 242c32 47-11 54-20 42" stroke="#63877B" stroke-width="6"/></g>
+          <g transform="rotate(-15 162 244)" filter="url(#shadow)"><rect x="104" y="218" width="108" height="76" rx="7" fill="#23484C" stroke="#73978B"/><path d="M104 239h108" stroke="#73978B"/><path d="m105 210 101-20 5 26-106 20-1-26Z" fill="#E6D7B4"/><path d="m113 208 18-3-11 29-14 3m43-35 19-4-11 30-20 4m49-36 18-3-10 29-18 3" fill="#274346"/><path d="M120 251h51m-51 10h74m-74 10h39" stroke="#A7B9AA" stroke-width="3" stroke-linecap="round"/></g>
+          <path d="M205 295h145v60c0 25-145 25-145 0v-60Z" fill="url(#podium)" stroke="#446157"/><ellipse cx="277.5" cy="295" rx="72.5" ry="21" fill="#345A52" stroke="#648071"/><ellipse cx="277.5" cy="295" rx="60" ry="15" fill="#2B4844"/>
+          <g filter="url(#shadow)"><path d="M226 107h-36v34c0 31 19 48 49 48m86-82h35v34c0 31-19 48-49 48" stroke="#BA8032" stroke-width="13"/><path d="M226 104h-36v34c0 31 19 48 49 48m86-82h35v34c0 31-19 48-49 48" stroke="#F3CE78" stroke-width="7"/><path d="M265 211h25v40c0 13 12 17 26 23h-77c14-6 26-10 26-23v-40Z" fill="url(#stem)"/><path d="M217 90h121l-9 75c-4 32-24 57-52 57s-48-25-52-57l-8-75Z" fill="url(#cup)"/><path d="M231 104c0 38 4 64 21 86" stroke="#FFF6CA" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/><ellipse cx="277.5" cy="91" rx="61" ry="11" fill="#FFF0B6"/><ellipse cx="277.5" cy="91" rx="50" ry="6" fill="#B88337"/><path d="m277 125 8 17 19 3-14 13 3 19-16-9-17 9 4-19-14-13 19-3 8-17Z" fill="#AC742B" opacity=".7"/><path d="m277 124 7 15 17 3-12 12 3 17-15-8-15 8 3-17-12-12 17-3 7-15Z" fill="#FFF0B6"/><rect x="235" y="273" width="84" height="18" rx="4" fill="#C79242"/><path d="M240 274h73" stroke="#FFE6A0" stroke-width="3"/><rect x="247" y="290" width="60" height="8" rx="2" fill="#173237"/></g>
+          <g transform="rotate(10 367 125)"><rect x="353" y="102" width="57" height="38" rx="6" fill="#D8A961"/><path d="M364 109v24m-5-12h10m16-6 3 3m6 5 3 3" stroke="#433B32" stroke-width="3" stroke-linecap="round"/></g>
+          <path d="m279 326 2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5Z" fill="#D5B574"/>
+        </svg>
+        <div class="art-caption"><span></span><span data-i18n="artCaption">EVERY TEAM HAS ITS STARS</span><span></span></div>
+      </div>
+      <svg class="hero-edge" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path class="led-track" fill="none"/><g class="led-bulbs"></g></svg>
+      <button type="button" class="lights-toggle" aria-label="Pause border lights" title="Pause border lights"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="pause-symbol" d="M5 4v8M11 4v8"/><path class="play-symbol" d="m5 3 7 5-7 5Z"/></svg></button>
+    </section>
+    <section class="activities" id="activities" aria-labelledby="activities-title">
+      <div class="section-heading"><div><div class="section-eyebrow" data-i18n="activitiesEyebrow">SOMETHING FOR EVERY STAR</div><h2 id="activities-title" data-i18n="activitiesTitle">Find your kind of fun<span>.</span></h2></div><div class="section-note"><span class="mini-star">✦</span><span data-i18n="activitiesNote">Six ways to make it a great day</span></div></div>
+      <div class="activity-grid">
+        <a class="activity-card coral" href="#/fun-corner" data-activity="fun"><span class="card-top"><span class="card-icon"><svg><use href="#i-masks"/></svg></span><span class="card-number">01</span></span><span class="card-title" data-i18n="funTitle">Fun Corner</span><span class="card-description" data-i18n="funDescription">Small breaks. Big smiles. Good vibes only.</span><span class="card-bottom"><span class="card-tag" data-i18n="funTag">THE HAPPY PLACE</span><span class="card-spark" aria-hidden="true">✦</span></span></a>
+        <a class="activity-card gold" href="#/premier-league" data-activity="league"><span class="card-top"><span class="card-icon"><svg><use href="#i-trophy"/></svg></span><span class="card-number">02</span></span><span class="card-title" data-i18n="leagueTitle">Premier League</span><span class="card-description" data-i18n="leagueDescription">One team. One dream. All the glory.</span><span class="card-bottom"><span class="card-tag" data-i18n="leagueTag">WHERE CHAMPIONS RISE</span><span class="card-spark" aria-hidden="true">✦</span></span></a>
+        <a class="activity-card lavender" href="#/games" data-activity="games"><span class="card-top"><span class="card-icon"><svg><use href="#i-game"/></svg></span><span class="card-number">03</span></span><span class="card-title" data-i18n="gamesTitle">Games</span><span class="card-description" data-i18n="gamesDescription">Bring your A-game. Let the good times roll.</span><span class="card-bottom"><span class="card-tag" data-i18n="gamesTag">CHALLENGE ACCEPTED</span><span class="card-spark" aria-hidden="true">✦</span></span></a>
+        <a class="activity-card mint" href="#/score-board" data-activity="scores"><span class="card-top"><span class="card-icon"><svg><use href="#i-chart"/></svg></span><span class="card-number">04</span></span><span class="card-title" data-i18n="scoresTitle">Score Board</span><span class="card-description" data-i18n="scoresDescription">Big efforts. Proud moments. Every point counts.</span><span class="card-bottom"><span class="card-tag" data-i18n="scoresTag">FOLLOW THE ACTION</span><span class="card-spark" aria-hidden="true">✦</span></span></a>
+        <a class="activity-card blue" href="#/about" data-activity="about"><span class="card-top"><span class="card-icon"><svg><use href="#i-people"/></svg></span><span class="card-number">05</span></span><span class="card-title" data-i18n="aboutTitle">About</span><span class="card-description" data-i18n="aboutDescription">The people and the spirit behind our story.</span><span class="card-bottom"><span class="card-tag" data-i18n="aboutTag">ONE AUROBINDO FAMILY</span><span class="card-spark" aria-hidden="true">✦</span></span></a>
+        <a class="activity-card rose" href="#/photos" data-activity="photos"><span class="card-top"><span class="card-icon"><svg><use href="#i-camera"/></svg></span><span class="card-number">06</span></span><span class="card-title" data-i18n="photosTitle">Photos</span><span class="card-description" data-i18n="photosDescription">Our moments. Our memories. Picture perfect.</span><span class="card-bottom"><span class="card-tag" data-i18n="photosTag">THE HIGHLIGHT REEL</span><span class="card-spark" aria-hidden="true">✦</span></span></a>
+      </div>
+    </section>
+    <aside class="together-banner"><div class="banner-mark" aria-hidden="true">a<span>✦</span></div><div><strong data-i18n="bannerTitle">Different talents. One blockbuster team.</strong><p data-i18n="bannerDescription">Celebrating the people who make Aurobindo Pharmacy extraordinary.</p></div><span class="banner-stars" aria-hidden="true">✧ ✦ ✧</span></aside>
+    </div>
+    <section id="section-view" class="section-page coral" aria-labelledby="page-title" hidden>
+      <nav class="page-nav" aria-label="Page navigation" data-i18n-aria="pageNavigation"><a href="#/" class="back-link"><span aria-hidden="true">←</span><span data-i18n="backHome">Back to Home</span></a><span class="page-nav-label" data-page="tag"></span></nav>
+      <div class="coming-stage">
+        <div class="coming-copy">
+          <span class="coming-badge"><span aria-hidden="true">✦</span><span data-i18n="comingSoon">COMING SOON</span></span>
+          <h1 id="page-title" tabindex="-1" data-page="title"></h1>
+          <h2 data-page="headline"></h2>
+          <p data-page="description"></p>
+          <a href="#/" class="home-cta"><span data-i18n="backHome">Back to Home</span><span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="coming-art" aria-hidden="true">
+          <div class="coming-orbit"></div><span class="coming-star star-a">✦</span><span class="coming-star star-b">✦</span><span class="coming-star star-c">✧</span>
+          <div class="coming-ticket"><div class="ticket-top"><span data-i18n="ticketTop">YOUR NEXT BIG MOMENT</span><span>✦</span></div><svg class="coming-icon" viewBox="0 0 32 32"><use id="page-icon" href="#i-masks"/></svg><div class="ticket-bottom"><span data-i18n="getReady">GET READY!</span><span class="ticket-bars"></span></div></div>
+        </div>
+        <div class="coming-stage-foot"><span data-i18n="stayTuned">STAY TUNED. THE GOOD STUFF IS ON ITS WAY.</span><span aria-hidden="true">✦ ✦ ✦</span></div>
+      </div>
+      <div class="page-teaser"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg><span data-page="teaser"></span></div>
+    </section>
+    <footer><span class="footer-brand" data-i18n="footerBrand">Aurobindo Pharmacy</span><span class="footer-message"><span data-i18n="footerMessage">Made for our people. Made for good times.</span><span class="footer-star" aria-hidden="true">✦</span></span><button class="install-button" id="install" hidden><svg class="icon"><use href="#i-download"/></svg><span data-i18n="install">Install app</span></button></footer>
+  </main>
+  <div class="toast" role="status" aria-live="polite" aria-atomic="true" id="toast"></div>
+  <noscript><p class="noscript">Enable JavaScript to switch languages and themes.</p></noscript>
+</body>
+</html>
