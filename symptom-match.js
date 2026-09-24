@@ -314,6 +314,8 @@
       if (isDragging) {
         el.dragWire.style.display = 'none';
 
+        try { card.releasePointerCapture(e.pointerId); } catch (_) {}
+
         // Element beneath cursor
         const targetEl = document.elementFromPoint(e.clientX, e.clientY);
         const targetCard = targetEl ? targetEl.closest('.sm-card') : null;
@@ -333,12 +335,13 @@
 
         justConnectedByDrag = true;
         setTimeout(() => { justConnectedByDrag = false; }, 200);
+      } else {
+        try { card.releasePointerCapture(e.pointerId); } catch (_) {}
       }
 
       state.dragStart = null;
       dragStartPos = null;
       isDragging = false;
-      try { card.releasePointerCapture(e.pointerId); } catch (_) {}
     });
 
     card.addEventListener('pointercancel', () => {
@@ -644,23 +647,36 @@
     el.btnSound.setAttribute('aria-label', state.isSoundMuted ? 'Unmute Sound' : 'Mute Sound');
   });
 
-  // Theme toggle
-  el.btnTheme.addEventListener('click', () => {
-    const isDark = document.documentElement.dataset.theme !== 'light';
-    const nextTheme = isDark ? 'light' : 'dark';
-    document.documentElement.dataset.theme = nextTheme;
-    el.btnTheme.textContent = nextTheme === 'light' ? '🌙' : '☀️';
-    try { localStorage.setItem('aurobindo-theme', nextTheme); } catch (_) {}
-  });
-
-  // Load saved theme
-  try {
-    const savedTheme = localStorage.getItem('aurobindo-theme');
-    if (savedTheme) {
-      document.documentElement.dataset.theme = savedTheme;
-      el.btnTheme.textContent = savedTheme === 'light' ? '🌙' : '☀️';
+  // Theme management
+  function syncThemeUI(theme) {
+    document.documentElement.dataset.theme = theme;
+    if (el.btnTheme) {
+      el.btnTheme.textContent = theme === 'light' ? '🌙' : '☀️';
+      el.btnTheme.setAttribute('title', theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+      el.btnTheme.setAttribute('aria-label', theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode');
     }
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme) {
+      metaTheme.content = theme === 'light' ? '#f1f5f9' : '#090d16';
+    }
+  }
+
+  let activeTheme = 'light';
+  try {
+    const saved = localStorage.getItem('aurobindo-theme');
+    if (saved === 'dark' || saved === 'light') activeTheme = saved;
+    else if (document.documentElement.dataset.theme) activeTheme = document.documentElement.dataset.theme;
   } catch (_) {}
+  syncThemeUI(activeTheme);
+
+  if (el.btnTheme) {
+    el.btnTheme.addEventListener('click', () => {
+      const current = document.documentElement.dataset.theme || 'light';
+      const nextTheme = current === 'light' ? 'dark' : 'light';
+      syncThemeUI(nextTheme);
+      try { localStorage.setItem('aurobindo-theme', nextTheme); } catch (_) {}
+    });
+  }
 
   // Recalculate wires on resize or scroll
   window.addEventListener('resize', () => {

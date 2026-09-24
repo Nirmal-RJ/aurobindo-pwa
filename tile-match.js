@@ -70,7 +70,7 @@ window.TileMatch = (() => {
   }
 
   function translate(next) {
-    language = Object.hasOwn(copy, next) ? next : 'en';
+    language = copy[next] ? next : 'en';
     const text = copy[language];
     document.querySelectorAll('[data-tm]').forEach(node => {
       if (text[node.dataset.tm]) node.textContent = text[node.dataset.tm];

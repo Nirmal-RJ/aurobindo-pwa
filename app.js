@@ -22,7 +22,7 @@ const translations = {
 const pageTranslations = {
   en: {
     skip: 'Skip to content', pageNavigation: 'Page navigation', backHome: 'Back to Home', comingSoon: 'COMING SOON', playGame: 'PLAY GAME', ticketTop: 'YOUR NEXT BIG MOMENT', getReady: 'GET READY!', stayTuned: 'STAY TUNED. THE GOOD STUFF IS ON ITS WAY.',
-    gamePosters: 'Game posters', gameOne: 'Game 1', gameTwo: 'Game 2', symptomMatch: 'Probable Cause Pairing', symptomTeaser: 'Pair the cause and symptom.', tileMatch: 'Tile Match', gameFour: 'Game 4', gameMystery: 'A new challenge is on its way.', tileTeaser: 'A little focus. A whole lot of fun.',
+    gamePosters: 'Game posters', gameOne: 'Game 1', gameTwo: 'Game 2', symptomMatch: 'Symptom Cause Pairing', symptomTeaser: 'Pair the cause and symptom.', tileMatch: 'Tile Match', gameFour: 'Game 4', gameMystery: 'A new challenge is on its way.', tileTeaser: 'A little focus. A whole lot of fun.',
     fun: ['Big laughs. Loading soon.', 'We’re setting the stage for smiles, surprises, and a little everyday madness. Bring your fun side. We’ll bring the good times!', 'Save your best laugh. You’re going to need it.'],
     league: ['The trophy is waiting.', 'Get your team ready, turn up the team spirit, and dream big. Our next blockbuster league is getting ready for its grand entrance!', 'One team. One dream. Your moment is coming.'],
     games: ['Bring your A-game.', 'A little mystery, a little matching, and a whole lot of fun. Your next favourite game is getting ready!', 'Game face on. Good times ahead.'],
@@ -63,10 +63,30 @@ const pages = {
 let activePage = null;
 let homeScroll = 0;
 
-function readPreference(key, fallback) { try { return localStorage.getItem(key) || fallback; } catch { return fallback; } }
-function savePreference(key, value) { try { localStorage.setItem(key, value); } catch { /* Preferences remain active for this session. */ } }
+function readPreference(key, fallback) {
+  try {
+    const val = localStorage.getItem(key);
+    if (val) return val;
+  } catch (_) { }
+  try {
+    const sVal = sessionStorage.getItem(key);
+    if (sVal) return sVal;
+  } catch (_) { }
+  try {
+    const match = document.cookie.match(new RegExp('(?:^|;\\s*)' + key + '=([^;]*)'));
+    if (match) return decodeURIComponent(match[1]);
+  } catch (_) { }
+  return fallback;
+}
+
+function savePreference(key, value) {
+  try { localStorage.setItem(key, value); } catch (_) { }
+  try { sessionStorage.setItem(key, value); } catch (_) { }
+  try { document.cookie = `${key}=${encodeURIComponent(value)};path=/;max-age=31536000;SameSite=Lax`; } catch (_) { }
+}
+
 let language = readPreference('aurobindo-language', 'en');
-if (!Object.hasOwn(translations, language)) language = 'en';
+if (!translations[language]) language = 'en';
 let toastTimer;
 let activeToast = null;
 
@@ -80,7 +100,7 @@ function toast(message, activity = null) {
 }
 
 function setLanguage(next) {
-  if (!Object.hasOwn(translations, next)) return;
+  if (!translations[next]) return;
   language = next;
   const dictionary = translations[language];
   document.documentElement.lang = language;
@@ -112,24 +132,56 @@ function setTheme(theme) {
 const languageTrigger = document.querySelector('#language');
 const languageMenu = document.querySelector('#language-menu');
 const languageOptions = [...languageMenu.querySelectorAll('[data-language]')];
+
 function closeLanguageMenu(restoreFocus = false) {
   languageMenu.hidden = true;
   languageTrigger.setAttribute('aria-expanded', 'false');
-  if (restoreFocus) languageTrigger.focus();
+  if (restoreFocus) {
+    try { languageTrigger.focus({ preventScroll: true }); } catch (_) { languageTrigger.focus(); }
+  }
 }
+
 function openLanguageMenu() {
   languageMenu.hidden = false;
   languageTrigger.setAttribute('aria-expanded', 'true');
-  languageOptions.find(button => button.dataset.language === language).focus();
+  const activeBtn = languageOptions.find(button => button.dataset.language === language);
+  if (activeBtn) {
+    try { activeBtn.focus({ preventScroll: true }); } catch (_) { activeBtn.focus(); }
+  }
 }
-languageTrigger.addEventListener('click', () => languageMenu.hidden ? openLanguageMenu() : closeLanguageMenu(true));
-languageTrigger.addEventListener('keydown', event => {
-  if (event.key === 'ArrowDown' || event.key === 'ArrowUp') { event.preventDefault(); openLanguageMenu(); }
+
+languageTrigger.addEventListener('click', (event) => {
+  event.stopPropagation();
+  languageMenu.hidden ? openLanguageMenu() : closeLanguageMenu(false);
 });
-languageOptions.forEach(button => button.addEventListener('click', () => {
-  setLanguage(button.dataset.language);
-  closeLanguageMenu(true);
-}));
+
+languageTrigger.addEventListener('keydown', event => {
+  if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+    event.preventDefault();
+    openLanguageMenu();
+  }
+});
+
+// Selection handlers: on touch devices (especially iOS Safari), pointerdown fires before focusout
+// so the selection is registered immediately with zero delay or focusout cancel.
+languageOptions.forEach(button => {
+  let justSelected = false;
+  const selectOption = (event) => {
+    if (justSelected && event.type === 'click') return;
+    if (event.type === 'pointerdown') {
+      justSelected = true;
+      setTimeout(() => { justSelected = false; }, 350);
+    }
+    const chosen = button.dataset.language;
+    if (chosen) {
+      setLanguage(chosen);
+      closeLanguageMenu(false);
+    }
+  };
+  button.addEventListener('pointerdown', selectOption);
+  button.addEventListener('click', selectOption);
+});
+
 languageMenu.addEventListener('keydown', event => {
   const current = languageOptions.indexOf(document.activeElement);
   let next;
@@ -139,14 +191,25 @@ languageMenu.addEventListener('keydown', event => {
   if (event.key === 'End') next = languageOptions.length - 1;
   if (next !== undefined) { event.preventDefault(); languageOptions[next].focus(); }
 });
+
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && !languageMenu.hidden) { event.preventDefault(); closeLanguageMenu(true); }
+  if (event.key === 'Escape' && !languageMenu.hidden) {
+    event.preventDefault();
+    closeLanguageMenu(true);
+  }
 });
+
 document.addEventListener('pointerdown', event => {
-  if (!event.target.closest('.language-control')) closeLanguageMenu();
+  if (!event.target.closest('.language-control')) {
+    closeLanguageMenu(false);
+  }
 });
+
+// Keyboard Tab focusout: ONLY close if focus truly moved to another DOM element outside the menu
 document.querySelector('.language-control').addEventListener('focusout', event => {
-  if (!event.currentTarget.contains(event.relatedTarget)) closeLanguageMenu();
+  if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) {
+    closeLanguageMenu(false);
+  }
 });
 document.querySelectorAll('[data-set-theme]').forEach(button => button.addEventListener('click', () => setTheme(button.dataset.setTheme)));
 function updatePageContent() {

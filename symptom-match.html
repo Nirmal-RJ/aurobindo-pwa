@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090d16">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#f1f5f9">
   <meta name="mobile-web-app-capable" content="yes">
-  <title>Probable Cause Pairing · Aurobindo Pharmacy</title>
+  <title>Symptom Cause Pairing · Aurobindo Pharmacy</title>
   <link rel="icon" type="image/svg+xml" href="icon.svg">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="symptom-match.css?v=16">
+  <script>try { const t = localStorage.getItem('aurobindo-theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; } catch (_) { }</script>
+  <link rel="stylesheet" href="symptom-match.css?v=18">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
           <img src="logo.png" alt="Aurobindo Pharmacy" class="sm-brand-logo">
           <div class="sm-brand-text">
             <span class="sm-brand-title">Aurobindo Pharmacy</span>
-            <span class="sm-brand-badge">Game 02 · Probable Cause Pairing</span>
+            <span class="sm-brand-badge">Game 02 · Symptom Cause Pairing</span>
           </div>
         </a>
       </div>
@@ -29,8 +30,8 @@
         <button id="sm-btn-sound" class="sm-btn-icon" type="button" aria-label="Toggle Sound"
           title="Sound Effects">🔊</button>
         <button id="sm-btn-theme" class="sm-btn-icon" type="button" aria-label="Toggle Theme" title="Theme">☀️</button>
-        <a href="index.html#/games" class="sm-btn-back">
-          <span aria-hidden="true">←</span> Back to Games
+        <a href="index.html#/games" class="sm-btn-back" title="Back to Games">
+          <span aria-hidden="true">←</span> <span class="sm-back-text">Back to Games</span>
         </a>
       </div>
     </div>
@@ -42,7 +43,7 @@
     <!-- Intro View -->
     <section id="sm-intro-view" class="sm-intro-card">
       <span class="sm-intro-tag">HPLC Troubleshooting</span>
-      <h1 class="sm-intro-title">Probable Cause Pairing</h1>
+      <h1 class="sm-intro-title">Symptom Cause Pairing</h1>
       <p class="sm-intro-desc">
         Pair each chromatographic symptom on the left with its probable cause on the right.
         Tap to connect or drag cables directly between the sockets!
@@ -55,7 +56,7 @@
         </div>
         <div class="sm-stat-box">
           <strong>6</strong>
-          <span>Probable Causes</span>
+          <span>Symptom Causes</span>
         </div>
         <div class="sm-stat-box">
           <strong>60s</strong>
@@ -100,18 +101,16 @@
           <div class="sm-column sm-column-left">
             <div class="sm-column-header">
               <span>⚠️ Symptoms</span>
-              <span>Port</span>
             </div>
-            <div id="sm-symptoms-list" class="sm-column"></div>
+            <div id="sm-symptoms-list" class="sm-column-cards"></div>
           </div>
 
           <!-- Right Column: Probable Causes -->
           <div class="sm-column sm-column-right">
             <div class="sm-column-header">
-              <span>Port</span>
-              <span>🔍 Probable Causes</span>
+              <span>Symptom Causes 🔍</span>
             </div>
-            <div id="sm-causes-list" class="sm-column"></div>
+            <div id="sm-causes-list" class="sm-column-cards"></div>
           </div>
         </div>
       </div>
@@ -131,7 +130,7 @@
     <div id="sm-results-modal" class="sm-modal-backdrop" hidden>
       <div class="sm-modal-card" role="dialog" aria-labelledby="sm-modal-heading">
         <div class="sm-modal-badge" aria-hidden="true">🏆</div>
-        <h2 id="sm-modal-heading" class="sm-modal-title">Probable Cause Pairing Report</h2>
+        <h2 id="sm-modal-heading" class="sm-modal-title">Symptom Cause Pairing Report</h2>
         <p class="sm-modal-subtitle">Review your diagnostic accuracy</p>
 
         <div class="sm-score-banner">
@@ -170,7 +169,7 @@
   <!-- Confetti Canvas -->
   <canvas id="sm-confetti-canvas" class="sm-confetti-canvas"></canvas>
 
-  <script src="symptom-match.js?v=16"></script>
+  <script src="symptom-match.js?v=18"></script>
 </body>
 
 </html>

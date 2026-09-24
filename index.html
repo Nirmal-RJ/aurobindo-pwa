@@ -13,10 +13,19 @@
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./icons/icon-192.png">
   <link rel="manifest" href="./manifest.webmanifest">
-  <script>try { const t = localStorage.getItem('aurobindo-theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t } catch { }</script>
-  <link rel="stylesheet" href="./styles.css?v=15">
-  <script src="./tile-match.js?v=11" defer></script>
-  <script src="./app.js?v=15" defer></script>
+  <script>
+    try {
+      const t = localStorage.getItem('aurobindo-theme') || (document.cookie.match(/(?:^|;\s*)aurobindo-theme=([^;]*)/) || [])[1];
+      if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+    } catch (_) { }
+    try {
+      const l = localStorage.getItem('aurobindo-language') || (document.cookie.match(/(?:^|;\s*)aurobindo-language=([^;]*)/) || [])[1];
+      if (l === 'te' || l === 'hi' || l === 'en') document.documentElement.lang = l;
+    } catch (_) { }
+  </script>
+  <link rel="stylesheet" href="./styles.css?v=18">
+  <script src="./tile-match.js?v=18" defer></script>
+  <script src="./app.js?v=18" defer></script>
 </head>
 
 <body>
@@ -128,7 +137,8 @@
             </svg><span data-i18n="heroEyebrow">BIG ENERGY. ONE FAMILY.</span></div>
           <h1 id="hero-title" class="sr-only">HPLC Celebrity League</h1>
           <div class="hero-logo-wrap">
-            <img src="./assets/hpcl-logo.png" alt="HPLC Celebrity League" class="hero-hpcl-logo" width="500" height="500">
+            <img src="./assets/hpcl-logo.png" alt="HPLC Celebrity League" class="hero-hpcl-logo" width="500"
+              height="500">
           </div>
           <div class="hero-bottom"><span class="hero-rule"></span><span data-i18n="heroBottom">Play together. Shine
               together.</span><svg class="icon">
@@ -360,9 +370,9 @@
 
         <a class="game-poster poster-two playable-poster" href="symptom-match.html" aria-labelledby="game-two-title">
           <div class="poster-card-wrap">
-            <img src="assets/game-2-card.png" alt="Game 2: Probable Cause Pairing" class="poster-card-image"
+            <img src="assets/game-2-card.png" alt="Game 2: Symptom Cause Pairing" class="poster-card-image"
               loading="lazy">
-            <h2 id="game-two-title" class="sr-only" data-i18n="symptomMatch">Probable Cause Pairing</h2>
+            <h2 id="game-two-title" class="sr-only" data-i18n="symptomMatch">Symptom Cause Pairing</h2>
             <div class="poster-footer-bar playable">
               <span class="poster-status-dot"></span>
               <span data-i18n="playGame">PLAY GAME</span>

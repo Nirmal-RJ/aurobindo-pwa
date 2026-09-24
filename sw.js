@@ -1,6 +1,6 @@
 const CACHE_PREFIX = 'aurobindo-shell-';
-const CACHE = `${CACHE_PREFIX}v16`;
-const ASSETS = ['./', './index.html', './styles.css?v=15', './app.js?v=15', './tile-match.js?v=11', './symptom-match.html', './symptom-match.css?v=16', './symptom-match.js?v=16', './assets/hpcl-logo.png', './assets/game-1-card.png', './assets/game-2-card.png', './assets/game-3-card.png', './assets/game-4-card.png', './logo.png', './icon.svg', './icons/icon-192.png', './icons/icon-512.png', './manifest.webmanifest'];
+const CACHE = `${CACHE_PREFIX}v19`;
+const ASSETS = ['./', './index.html', './styles.css?v=18', './app.js?v=18', './tile-match.js?v=18', './symptom-match.html', './symptom-match.css?v=18', './symptom-match.js?v=18', './assets/hpcl-logo.png', './assets/game-1-card.png', './assets/game-2-card.png', './assets/game-3-card.png', './assets/game-4-card.png', './logo.png', './icon.svg', './icons/icon-192.png', './icons/icon-512.png', './manifest.webmanifest'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
 });
