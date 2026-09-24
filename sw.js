@@ -1,6 +1,6 @@
 const CACHE_PREFIX = 'aurobindo-shell-';
-const CACHE = `${CACHE_PREFIX}v6`;
-const ASSETS = ['./', './index.html', './styles.css?v=6', './app.js?v=6', './logo.png', './icon.svg', './icons/icon-192.png', './icons/icon-512.png', './manifest.webmanifest'];
+const CACHE = `${CACHE_PREFIX}v11`;
+const ASSETS = ['./', './index.html', './styles.css?v=11', './app.js?v=11', './tile-match.js?v=11', './logo.png', './icon.svg', './icons/icon-192.png', './icons/icon-512.png', './manifest.webmanifest'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
 });

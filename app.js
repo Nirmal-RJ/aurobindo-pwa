@@ -21,28 +21,31 @@ const translations = {
 
 const pageTranslations = {
   en: {
-    skip: 'Skip to content', pageNavigation: 'Page navigation', backHome: 'Back to Home', comingSoon: 'COMING SOON', ticketTop: 'YOUR NEXT BIG MOMENT', getReady: 'GET READY!', stayTuned: 'STAY TUNED. THE GOOD STUFF IS ON ITS WAY.',
+    skip: 'Skip to content', pageNavigation: 'Page navigation', backHome: 'Back to Home', comingSoon: 'COMING SOON', playGame: 'PLAY GAME', ticketTop: 'YOUR NEXT BIG MOMENT', getReady: 'GET READY!', stayTuned: 'STAY TUNED. THE GOOD STUFF IS ON ITS WAY.',
+    gamePosters: 'Game posters', gameOne: 'Game 1', gameTwo: 'Game 2', tileMatch: 'Tile Match', gameFour: 'Game 4', gameMystery: 'A new challenge is on its way.', tileTeaser: 'A little focus. A whole lot of fun.',
     fun: ['Big laughs. Loading soon.', 'We’re setting the stage for smiles, surprises, and a little everyday madness. Bring your fun side. We’ll bring the good times!', 'Save your best laugh. You’re going to need it.'],
     league: ['The trophy is waiting.', 'Get your team ready, turn up the team spirit, and dream big. Our next blockbuster league is getting ready for its grand entrance!', 'One team. One dream. Your moment is coming.'],
-    games: ['Your next challenge awaits.', 'Warm up those winning instincts. A fresh round of fun, friendly rivalries, and “one more game” moments is on its way!', 'Game face on. Good times ahead.'],
+    games: ['Four games. Bring your A-game.', 'A little mystery, a little matching, and a whole lot of fun. Your next favourite game is getting ready!', 'Game face on. Good times ahead.'],
     scores: ['Every point. A proud moment.', 'The spotlight is getting ready for our stars. Soon, this is where team spirit, big efforts, and winning moments will shine!', 'The board is waiting. Who will make their mark?'],
     about: ['Meet the stars behind the story.', 'Every blockbuster has an amazing cast. Ours is the Aurobindo Pharmacy family. Get ready to discover the people and spirit that bring us together!', 'Many talents. One family. A story worth celebrating.'],
     photos: ['Big smiles. Coming into focus.', 'The cheers, the celebrations, the unforgettable “remember this?” moments. Our memory wall is getting picture-ready!', 'Keep smiling. The highlight reel is on its way.']
   },
   te: {
-    skip: 'విషయానికి వెళ్లండి', pageNavigation: 'పేజీ నావిగేషన్', backHome: 'హోమ్‌కు తిరిగి వెళ్లండి', comingSoon: 'త్వరలో రాబోతోంది', ticketTop: 'మీ తదుపరి అద్భుత క్షణం', getReady: 'సిద్ధంగా ఉండండి!', stayTuned: 'వేచి చూడండి. అసలైన సందడి రాబోతోంది.',
+    skip: 'విషయానికి వెళ్లండి', pageNavigation: 'పేజీ నావిగేషన్', backHome: 'హోమ్‌కు తిరిగి వెళ్లండి', comingSoon: 'త్వరలో రాబోతోంది', playGame: 'ఆట ఆడండి', ticketTop: 'మీ తదుపరి అద్భుత క్షణం', getReady: 'సిద్ధంగా ఉండండి!', stayTuned: 'వేచి చూడండి. అసలైన సందడి రాబోతోంది.',
+    gamePosters: 'ఆటల పోస్టర్లు', gameOne: 'ఆట 1', gameTwo: 'ఆట 2', tileMatch: 'టైల్ మ్యాచ్', gameFour: 'ఆట 4', gameMystery: 'కొత్త సవాలు రాబోతోంది.', tileTeaser: 'కాస్త ఏకాగ్రత. బోలెడు సరదా.',
     fun: ['నవ్వుల సందడి మొదలవబోతోంది.', 'చిరునవ్వులు, ఆశ్చర్యాలు, బోలెడు సరదా కోసం వేదిక సిద్ధమవుతోంది. మీ ఉత్సాహాన్ని తీసుకురండి. మనమంతా కలిసి సందడి చేద్దాం!', 'మనసారా నవ్వడానికి సిద్ధంగా ఉండండి.'],
     league: ['ట్రోఫీ మీ కోసం ఎదురుచూస్తోంది.', 'మీ జట్టును సిద్ధం చేయండి. ఉత్సాహాన్ని పెంచండి. పెద్ద కలలు కనండి. మన తదుపరి బ్లాక్‌బస్టర్ లీగ్ ఘనంగా రాబోతోంది!', 'ఒకే జట్టు. ఒకే కల. మీ క్షణం రాబోతోంది.'],
-    games: ['మీ తదుపరి సవాలు సిద్ధమవుతోంది.', 'మీ గెలుపు సత్తాకు పదును పెట్టండి. సరదా పోటీలు, స్నేహపూర్వక సవాళ్లు, మరో ఆట ఆడాలనిపించే క్షణాలు రాబోతున్నాయి!', 'ఆటకు సిద్ధమా? ఆనందం ముందుంది.'],
+    games: ['నాలుగు ఆటలు. మీ సత్తా చూపండి.', 'కొంచెం ఉత్కంఠ, కొంచెం జత కలపడం, మరెంతో సరదా. మీకు నచ్చే కొత్త ఆటలు సిద్ధమవుతున్నాయి!', 'ఆటకు సిద్ధమా? ఆనందం ముందుంది.'],
     scores: ['ప్రతి పాయింటూ గర్వకారణమే.', 'మన తారల కోసం వేదిక సిద్ధమవుతోంది. జట్టు స్ఫూర్తి, గొప్ప ప్రయత్నాలు, విజయ క్షణాలు త్వరలో ఇక్కడ మెరవబోతున్నాయి!', 'స్కోరు బోర్డు ఎదురుచూస్తోంది. మీ ముద్ర వేస్తారా?'],
     about: ['మన కథ వెనుక ఉన్న తారలు.', 'ప్రతి బ్లాక్‌బస్టర్ వెనుక అద్భుతమైన బృందం ఉంటుంది. మనది అరబిందో ఫార్మసీ కుటుంబం. మనల్ని ఒక్కటిగా నిలిపే మనుషుల గురించి తెలుసుకోవడానికి సిద్ధంగా ఉండండి!', 'ఎన్నో ప్రతిభలు. ఒకే కుటుంబం. మనందరి కథ.'],
     photos: ['చిరునవ్వులు చిత్రాలుగా రాబోతున్నాయి.', 'కేరింతలు, సంబరాలు, ఇది గుర్తుందా అనిపించే మధుర క్షణాలు. మన జ్ఞాపకాల గోడ అందంగా సిద్ధమవుతోంది!', 'నవ్వుతూ ఉండండి. మన మధుర జ్ఞాపకాలు రాబోతున్నాయి.']
   },
   hi: {
-    skip: 'मुख्य सामग्री पर जाएँ', pageNavigation: 'पेज नेविगेशन', backHome: 'होम पर वापस जाएँ', comingSoon: 'जल्द आ रहा है', ticketTop: 'आपका अगला शानदार पल', getReady: 'तैयार हो जाइए!', stayTuned: 'जुड़े रहें. असली मस्ती आने वाली है.',
+    skip: 'मुख्य सामग्री पर जाएँ', pageNavigation: 'पेज नेविगेशन', backHome: 'होम पर वापस जाएँ', comingSoon: 'जल्द आ रहा है', playGame: 'खेल खेलें', ticketTop: 'आपका अगला शानदार पल', getReady: 'तैयार हो जाइए!', stayTuned: 'जुड़े रहें. असली मस्ती आने वाली है.',
+    gamePosters: 'खेलों के पोस्टर', gameOne: 'खेल 1', gameTwo: 'खेल 2', tileMatch: 'टाइल मैच', gameFour: 'खेल 4', gameMystery: 'एक नई चुनौती आने वाली है.', tileTeaser: 'थोड़ा ध्यान. ढेर सारी मस्ती.',
     fun: ['हँसी का धमाका आने वाला है.', 'मुस्कान, सरप्राइज़ और रोज़ की थोड़ी मस्ती के लिए मंच तैयार हो रहा है. अपना मस्त अंदाज़ लेकर आइए. खुशियाँ हम मिलकर मनाएँगे!', 'अपनी सबसे प्यारी हँसी तैयार रखिए.'],
     league: ['ट्रॉफी आपका इंतज़ार कर रही है.', 'अपनी टीम तैयार करें, जोश बढ़ाएँ और बड़े सपने देखें. हमारी अगली ब्लॉकबस्टर लीग शानदार एंट्री की तैयारी कर रही है!', 'एक टीम. एक सपना. आपका पल आने वाला है.'],
-    games: ['आपकी अगली चुनौती आने वाली है.', 'अपने जीतने के हुनर को तैयार रखें. मज़ेदार मुकाबले, दोस्ताना चुनौतियाँ और एक और गेम खेलने का जोश जल्द आ रहा है!', 'खेलने को तैयार? मस्ती आपका इंतज़ार कर रही है.'],
+    games: ['चार खेल. दिखाइए अपना हुनर.', 'थोड़ा रहस्य, थोड़ी जोड़ियाँ और ढेर सारी मस्ती. आपके नए पसंदीदा खेल तैयार हो रहे हैं!', 'खेलने को तैयार? मस्ती आपका इंतज़ार कर रही है.'],
     scores: ['हर अंक. गर्व का एक पल.', 'हमारे सितारों के लिए मंच तैयार हो रहा है. जल्द ही यहाँ टीम का जोश, बड़ी कोशिशें और जीत के पल चमकेंगे!', 'बोर्ड तैयार हो रहा है. अपनी छाप कौन छोड़ेगा?'],
     about: ['हमारी कहानी के सितारों से मिलिए.', 'हर ब्लॉकबस्टर के पीछे एक शानदार टीम होती है. हमारी टीम है अरबिंदो फ़ार्मेसी परिवार. उन लोगों और उस जज़्बे को जानने के लिए तैयार रहें जो हमें जोड़ते हैं!', 'अनेक हुनर. एक परिवार. जश्न मनाने लायक कहानी.'],
     photos: ['बड़ी मुस्कानें. जल्द तस्वीरों में.', 'तालियाँ, जश्न और याद है यह पल वाली खूबसूरत यादें. हमारी यादों की दीवार तस्वीरों से सजने को तैयार हो रही है!', 'मुस्कुराते रहिए. यादगार झलकियाँ आने वाली हैं.']
@@ -93,6 +96,9 @@ function setLanguage(next) {
   savePreference('aurobindo-language', language);
   updateLightsLabel();
   updatePageContent();
+  if (window.TileMatch && window.TileMatch.translate) {
+    window.TileMatch.translate(language);
+  }
 }
 
 function setTheme(theme) {
@@ -155,27 +161,52 @@ function renderRoute(focus = true) {
   // Hash routes work on static hosting, in subdirectories, and offline.
   if (location.hash && !location.hash.startsWith('#/')) return;
   const route = location.hash.slice(2).replace(/\/$/, '');
-  const next = Object.keys(pages).find(key => pages[key].route === route) || null;
-  if (route && !next) history.replaceState(null, '', '#/');
+  const isTileMatch = route === 'games/tile-match';
+  const next = isTileMatch ? null : (Object.keys(pages).find(key => pages[key].route === route) || null);
+  if (route && !next && !isTileMatch) history.replaceState(null, '', '#/');
   const previous = activePage;
-  if (!previous && next) homeScroll = window.scrollY;
-  activePage = next;
-  document.querySelector('#home-view').hidden = !!next;
+  if (!previous && (next || isTileMatch)) homeScroll = window.scrollY;
+  activePage = isTileMatch ? 'games/tile-match' : next;
+  
+  const homeView = document.querySelector('#home-view');
   const section = document.querySelector('#section-view');
-  section.hidden = !next;
+  const tmView = document.querySelector('#tile-match-view');
+  
   document.querySelector('#toast').classList.remove('visible');
   closeLanguageMenu();
+  
+  if (isTileMatch) {
+    homeView.hidden = true;
+    section.hidden = true;
+    if (tmView) tmView.hidden = false;
+    if (window.TileMatch && window.TileMatch.enter) window.TileMatch.enter();
+    if (focus) {
+      window.scrollTo(0, 0);
+      const tmTitle = document.querySelector('#tm-title');
+      if (tmTitle) tmTitle.focus({ preventScroll: true });
+    }
+    return;
+  }
+  
+  if (tmView && !tmView.hidden) {
+    if (window.TileMatch && window.TileMatch.leave) window.TileMatch.leave();
+    tmView.hidden = true;
+  }
+  
+  homeView.hidden = !!next;
+  section.hidden = !next;
   if (next) {
-    section.className = `section-page ${pages[next].color}`;
+    section.className = `section-page ${pages[next].color}${next === 'games' ? ' is-games' : ''}`;
+    document.querySelector('.game-gallery').hidden = next !== 'games';
     document.querySelector('#page-icon').setAttribute('href', `#i-${pages[next].icon}`);
     updatePageContent();
     if (focus) { window.scrollTo(0, 0); document.querySelector('#page-title').focus({ preventScroll: true }); }
   } else {
     document.title = translations[language].title;
     if (focus) {
-      window.scrollTo(0, previous ? homeScroll : 0);
-      const target = previous ? document.querySelector(`[data-activity="${previous}"]`) : document.querySelector('#main-content');
-      target.focus({ preventScroll: true });
+      window.scrollTo(0, previous && previous !== 'games/tile-match' ? homeScroll : 0);
+      const target = (previous && previous !== 'games/tile-match') ? document.querySelector(`[data-activity="${previous}"]`) : document.querySelector('#main-content');
+      if (target) target.focus({ preventScroll: true });
     }
   }
 }
