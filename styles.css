@@ -61,6 +61,8 @@ html[lang="te"] .coming-copy h2,html[lang="hi"] .coming-copy h2{letter-spacing:0
 .game-poster{position:relative;isolation:isolate;border-radius:20px;background:transparent;color:#fff;border:none;box-shadow:none;transition:transform .3s;text-decoration:none;display:block}
 .poster-card-wrap{position:relative;width:100%;aspect-ratio:507/685;border-radius:20px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,0.35);transition:transform .3s cubic-bezier(0.16,1,0.3,1),box-shadow .3s ease}
 .poster-card-image{width:100%;height:100%;display:block;object-fit:cover;object-position:center bottom;border-radius:20px}
+/* Fit the narrower posters in full so their top-left numbers are not cropped. */
+.poster-one .poster-card-image,.poster-four .poster-card-image{object-fit:fill}
 .playable-poster{cursor:pointer}
 .playable-poster .poster-card-wrap:hover{transform:translateY(-8px) scale(1.02)}
 .poster-one .poster-card-wrap:hover{box-shadow:0 16px 36px rgba(168,85,247,0.45)}
