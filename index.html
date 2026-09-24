@@ -14,9 +14,9 @@
   <link rel="apple-touch-icon" href="./icons/icon-192.png">
   <link rel="manifest" href="./manifest.webmanifest">
   <script>try { const t = localStorage.getItem('aurobindo-theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t } catch { }</script>
-  <link rel="stylesheet" href="./styles.css?v=11">
+  <link rel="stylesheet" href="./styles.css?v=13">
   <script src="./tile-match.js?v=11" defer></script>
-  <script src="./app.js?v=11" defer></script>
+  <script src="./app.js?v=13" defer></script>
 </head>
 
 <body>
@@ -120,7 +120,8 @@
         <div class="hero-beam beam-one"></div>
         <div class="hero-beam beam-two"></div>
         <div class="hero-confetti" aria-hidden="true">
-          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
         <div class="hero-copy">
           <div class="hero-eyebrow"><svg class="icon">
               <use href="#i-spark" />
@@ -347,61 +348,52 @@
       </div>
       <section class="game-gallery" aria-label="Game posters" data-i18n-aria="gamePosters" hidden>
         <article class="game-poster poster-one" aria-labelledby="game-one-title">
-          <div class="poster-top"><span>01</span><span aria-hidden="true">✦</span></div>
-          <div class="poster-art" aria-hidden="true">
-            <div class="poster-orbit"></div><span class="poster-big-number">01</span><svg class="poster-symbol">
-              <use href="#i-game" />
-            </svg><span class="poster-star">✦</span>
-          </div>
-          <div class="poster-copy">
-            <h2 id="game-one-title" data-i18n="gameOne">Game 1</h2>
-            <p data-i18n="gameMystery">A new challenge is on its way.</p>
-          </div>
-          <div class="poster-footer"><span class="poster-status-dot"></span><span data-i18n="comingSoon">COMING
-              SOON</span></div>
-        </article>
-        <article class="game-poster poster-two" aria-labelledby="game-two-title">
-          <div class="poster-top"><span>02</span><span aria-hidden="true">✦</span></div>
-          <div class="poster-art" aria-hidden="true">
-            <div class="poster-orbit"></div><span class="poster-big-number">02</span><span
-              class="mystery-cube">?</span><span class="poster-star">✧</span>
-          </div>
-          <div class="poster-copy">
-            <h2 id="game-two-title" data-i18n="gameTwo">Game 2</h2>
-            <p data-i18n="gameMystery">A new challenge is on its way.</p>
-          </div>
-          <div class="poster-footer"><span class="poster-status-dot"></span><span data-i18n="comingSoon">COMING
-              SOON</span></div>
-        </article>
-        <a class="game-poster poster-three playable-poster" href="#/games/tile-match"
-          aria-labelledby="game-three-title">
-          <div class="poster-top"><span>03</span><span aria-hidden="true">✦</span></div>
-          <div class="poster-art" aria-hidden="true">
-            <div class="poster-orbit"></div>
-            <div class="match-tiles">
-              <span>✦</span><span>●</span><span>◆</span><span>◆</span><span>✦</span><span>●</span><span>●</span><span>◆</span><span>✦</span>
+          <div class="poster-card-wrap" style="opacity: 0.2;">
+            <img src="assets/game-1-card.png" alt="Game 1: Triple Match" class="poster-card-image" loading="lazy">
+            <h2 id="game-one-title" class="sr-only" data-i18n="gameOne">Triple Match</h2>
+            <div class="poster-footer-bar">
+              <span class="poster-status-dot"></span>
+              <span data-i18n="comingSoon">COMING SOON</span>
             </div>
           </div>
-          <div class="poster-copy">
-            <h2 id="game-three-title" data-i18n="tileMatch">Tile Match</h2>
-            <p data-i18n="tileTeaser">A little focus. A whole lot of fun.</p>
+        </article>
+
+        <a class="game-poster poster-two playable-poster" href="symptom-match.html" aria-labelledby="game-two-title">
+          <div class="poster-card-wrap">
+            <img src="assets/game-2-card.png" alt="Game 2: Probable Cause Pairing" class="poster-card-image"
+              loading="lazy">
+            <h2 id="game-two-title" class="sr-only" data-i18n="symptomMatch">Probable Cause Pairing</h2>
+            <div class="poster-footer-bar playable">
+              <span class="poster-status-dot"></span>
+              <span data-i18n="playGame">PLAY GAME</span>
+              <span class="poster-play-arrow" aria-hidden="true">↗</span>
+            </div>
           </div>
-          <div class="poster-footer"><span class="poster-status-dot"></span><span data-i18n="playGame">PLAY
-              GAME</span><span class="poster-play-arrow" aria-hidden="true">↗</span></div>
         </a>
+
+        <a class="game-poster poster-three playable-poster" href="#/games/tile-match"
+          aria-labelledby="game-three-title">
+          <div class="poster-card-wrap">
+            <img src="assets/game-3-card.png" alt="Game 3: Tile Match" class="poster-card-image" loading="lazy">
+            <h2 id="game-three-title" class="sr-only" data-i18n="tileMatch">Tile Match</h2>
+            <div class="poster-footer-bar playable">
+              <span class="poster-status-dot"></span>
+              <span data-i18n="playGame">PLAY GAME</span>
+              <span class="poster-play-arrow" aria-hidden="true">↗</span>
+            </div>
+          </div>
+        </a>
+
         <article class="game-poster poster-four" aria-labelledby="game-four-title">
-          <div class="poster-top"><span>04</span><span aria-hidden="true">✦</span></div>
-          <div class="poster-art" aria-hidden="true">
-            <div class="poster-orbit"></div><span class="poster-big-number">04</span><svg class="poster-symbol">
-              <use href="#i-trophy" />
-            </svg><span class="poster-star">✦</span>
+          <div class="poster-card-wrap" style="opacity: 0.2;">
+            <img src="assets/game-4-card.png" alt="Game 4: Swipe the Right Action" class="poster-card-image"
+              loading="lazy">
+            <h2 id="game-four-title" class="sr-only" data-i18n="gameFour">Swipe the Right Action</h2>
+            <div class="poster-footer-bar">
+              <span class="poster-status-dot"></span>
+              <span data-i18n="comingSoon">COMING SOON</span>
+            </div>
           </div>
-          <div class="poster-copy">
-            <h2 id="game-four-title" data-i18n="gameFour">Game 4</h2>
-            <p data-i18n="gameMystery">A new challenge is on its way.</p>
-          </div>
-          <div class="poster-footer"><span class="poster-status-dot"></span><span data-i18n="comingSoon">COMING
-              SOON</span></div>
         </article>
       </section>
       <div class="page-teaser"><svg class="icon" aria-hidden="true">
@@ -410,7 +402,8 @@
     </section>
     <section id="tile-match-view" class="tm-view" aria-labelledby="tm-title" hidden>
       <nav class="page-nav">
-        <a href="#/games" class="back-link"><span aria-hidden="true">←</span><span data-tm="backGames">Back to Games</span></a>
+        <a href="#/games" class="back-link"><span aria-hidden="true">←</span><span data-tm="backGames">Back to
+            Games</span></a>
         <span class="tm-edition" data-tm="edition">GAME 03 · SST CHALLENGE</span>
       </nav>
       <div class="tm-shell">
@@ -454,15 +447,18 @@
               </span>
             </div>
             <div class="time-container">
-              <span class="tm-score-pill"><span data-tm="matched">Matched</span>: <strong id="tm-score">0 / 5</strong></span>
-              <span class="tm-clock"><span data-tm="timeLeft">Time</span>: <strong id="tm-time" role="timer" aria-live="off">45s</strong></span>
+              <span class="tm-score-pill"><span data-tm="matched">Matched</span>: <strong id="tm-score">0 /
+                  5</strong></span>
+              <span class="tm-clock"><span data-tm="timeLeft">Time</span>: <strong id="tm-time" role="timer"
+                  aria-live="off">45s</strong></span>
             </div>
             <button class="refresh" id="tm-refresh" type="button" aria-label="Restart round" title="Restart">↻</button>
           </div>
 
           <p class="tm-instruction" data-tm="instruction">Match the SST parameter with its meaning.</p>
 
-          <div id="tm-timer" class="tm-timer" role="progressbar" aria-label="Time remaining" aria-valuemin="0" aria-valuemax="45" aria-valuenow="45">
+          <div id="tm-timer" class="tm-timer" role="progressbar" aria-label="Time remaining" aria-valuemin="0"
+            aria-valuemax="45" aria-valuenow="45">
             <div id="tm-timer-fill"></div>
           </div>
 
@@ -473,13 +469,16 @@
 
         <div id="tm-results" class="win tm-results" hidden>
           <div class="tm-result-icon" aria-hidden="true">
-            <svg><use href="#i-trophy" /></svg>
+            <svg>
+              <use href="#i-trophy" />
+            </svg>
           </div>
           <h2 id="tm-result-title" tabindex="-1">Congratulations!</h2>
           <h3 id="tm-result-subtitle">- You won! -</h3>
           <p id="tm-result-message">
             It took you about <span class="seconds" id="tm-result-seconds">0</span> seconds to complete the game<br>
-            with <span class="moves" id="tm-result-moves">0</span> moves and <span class="star" id="tm-result-stars">3</span> stars.
+            with <span class="moves" id="tm-result-moves">0</span> moves and <span class="star"
+              id="tm-result-stars">3</span> stars.
           </p>
           <div class="tm-final-score">
             <span data-tm="yourScore">YOUR SCORE</span>

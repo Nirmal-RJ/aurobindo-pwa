@@ -58,34 +58,24 @@ html[lang="te"] .coming-copy h2,html[lang="hi"] .coming-copy h2{letter-spacing:0
 .is-games .coming-copy p{max-width:660px;font-size:13px}
 .is-games .coming-art,.is-games .home-cta,.is-games .coming-stage-foot{display:none}
 .game-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:19px;margin-top:32px}
-.game-poster{--poster-bg:#302065;--poster-accent:#d5a1ff;--poster-glow:#9555ed70;position:relative;isolation:isolate;overflow:hidden;border-radius:18px;background:radial-gradient(ellipse at 100% 10%,var(--poster-glow),transparent 65%),var(--poster-bg);color:#fff;border:1px solid color-mix(in srgb,var(--poster-accent),transparent 55%);box-shadow:0 5px 0 color-mix(in srgb,var(--poster-bg),#000 20%),0 12px 26px #24104918;transition:transform .3s;animation:card-arrive .6s backwards}
-.game-poster::after{content:"";position:absolute;inset:7px;border:1px solid #ffffff15;border-radius:12px;pointer-events:none}
-.game-poster:hover{transform:translateY(-5px)}
-.poster-two{--poster-bg:#102e54;--poster-accent:#85e8ff;--poster-glow:#13a6be65;animation-delay:.07s}
-.poster-three{--poster-bg:#183d37;--poster-accent:#aef4a1;--poster-glow:#5acb5065;animation-delay:.14s}
-.poster-four{--poster-bg:#5a1b44;--poster-accent:#ffc374;--poster-glow:#ff68375c;animation-delay:.21s}
-.poster-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;padding:19px 21px 0;color:var(--poster-accent);font-size:13px;font-weight:750;letter-spacing:2px}
-.poster-art{height:215px;display:grid;place-items:center;position:relative;overflow:hidden}
-.poster-orbit{position:absolute;width:175px;height:175px;border:1px solid color-mix(in srgb,var(--poster-accent),transparent 65%);border-radius:50%;box-shadow:0 0 0 20px #ffffff04,0 0 0 40px #ffffff02}
-.poster-big-number{position:absolute;left:17px;top:2px;font-size:145px;font-weight:900;line-height:1;color:var(--poster-accent);opacity:.1;letter-spacing:-12px}
-.poster-symbol{position:relative;width:110px;height:110px;fill:none;stroke:var(--poster-accent);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 14px var(--poster-glow));transform:rotate(-12deg);animation:poster-float 5s ease-in-out infinite}
-.poster-star{position:absolute;right:24px;bottom:35px;font-size:29px;color:var(--poster-accent)}
-.mystery-cube{position:relative;display:grid;place-items:center;width:98px;height:98px;border-radius:20px;background:linear-gradient(135deg,#d6faff,#60cdeb);color:#17526e;border:1px solid #dfffff;box-shadow:7px 9px 0 #068fb777,0 0 30px #64e0f92b;font-size:70px;font-weight:850;transform:rotate(13deg);animation:ticket-float 5s ease-in-out infinite}
-.match-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;position:relative;transform:rotate(-10deg);animation:poster-float 5s ease-in-out infinite}
-.match-tiles span{width:43px;height:43px;display:grid;place-items:center;border-radius:9px;background:#ffe596;color:#745120;font-size:28px;box-shadow:0 4px 0 #bd873c}
-.match-tiles span:nth-child(3n+2){background:#c9b3ff;color:#573b8d;box-shadow:0 4px 0 #9470c4}
-.match-tiles span:nth-child(3n){background:#9ae9cf;color:#24634d;box-shadow:0 4px 0 #3c9d7d}
-.poster-copy{position:relative;padding:0 21px 22px;min-height:99px}
-.poster-copy h2{color:var(--poster-accent);font-size:26px;font-weight:800;line-height:1.4;letter-spacing:-.7px;margin:0 0 8px}
-.poster-copy p{font-size:12px;line-height:1.8;color:#ece8f5;margin:0}
-.poster-footer{display:flex;align-items:center;gap:8px;margin:0 21px;padding:17px 0 20px;border-top:1px solid #ffffff25;font-size:8px;font-weight:700;letter-spacing:1.3px;color:var(--poster-accent)}
-.poster-status-dot{width:5px;height:5px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor;flex-shrink:0}
-html[lang="te"] .poster-copy h2,html[lang="hi"] .poster-copy h2{letter-spacing:0;font-size:24px}
-html[lang="te"] .poster-footer,html[lang="hi"] .poster-footer{letter-spacing:0;font-size:10px}
-@keyframes poster-float{0%,100%{transform:translateY(0) rotate(-10deg)}50%{transform:translateY(-7px) rotate(-5deg)}}
-@media(max-width:1000px){.game-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}.poster-art{height:215px}}
-@media(max-width:700px){.is-games .coming-stage{padding:27px 25px}.is-games .coming-copy h1{font-size:36px}.is-games .coming-copy h2{font-size:22px}.game-gallery{gap:16px 13px;margin-top:26px}.poster-top{padding:17px 15px 0;font-size:11px}.poster-art{height:175px}.poster-orbit{width:132px;height:132px}.poster-symbol{width:85px;height:85px}.poster-big-number{font-size:115px;left:8px;top:12px}.mystery-cube{width:76px;height:76px;font-size:54px;border-radius:16px}.match-tiles{gap:5px}.match-tiles span{width:33px;height:33px;font-size:23px;border-radius:7px}.poster-copy{padding:0 15px 17px;min-height:106px}.poster-copy h2{font-size:22px}.poster-copy p{font-size:11px}.poster-footer{margin:0 15px;font-size:7px;letter-spacing:.7px}.poster-star{right:17px;bottom:22px;font-size:24px}html[lang="te"] .poster-copy h2,html[lang="hi"] .poster-copy h2{font-size:21px}}
-@media(max-width:370px){.poster-art{height:150px}.poster-orbit{width:108px;height:108px}.poster-symbol{width:73px;height:73px}.poster-copy h2{font-size:20px}.poster-copy{padding-left:13px;padding-right:13px}.poster-footer{margin-left:13px;margin-right:13px;font-size:6.5px}.match-tiles span{width:29px;height:29px;font-size:21px}.match-tiles{gap:4px}.poster-big-number{font-size:100px}.poster-star{font-size:20px;right:12px;bottom:18px}}
+.game-poster{position:relative;isolation:isolate;border-radius:20px;background:transparent;color:#fff;border:none;box-shadow:none;transition:transform .3s;text-decoration:none;display:block}
+.poster-card-wrap{position:relative;width:100%;aspect-ratio:507/685;border-radius:20px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,0.35);transition:transform .3s cubic-bezier(0.16,1,0.3,1),box-shadow .3s ease}
+.poster-card-image{width:100%;height:100%;display:block;object-fit:cover;border-radius:20px}
+.playable-poster{cursor:pointer}
+.playable-poster .poster-card-wrap:hover{transform:translateY(-8px) scale(1.02)}
+.poster-one .poster-card-wrap:hover{box-shadow:0 16px 36px rgba(168,85,247,0.45)}
+.poster-two .poster-card-wrap:hover{box-shadow:0 16px 36px rgba(56,189,248,0.5)}
+.poster-three .poster-card-wrap:hover{box-shadow:0 16px 36px rgba(52,211,153,0.5)}
+.poster-four .poster-card-wrap:hover{box-shadow:0 16px 36px rgba(244,63,94,0.45)}
+.poster-footer-bar{position:absolute;bottom:14px;left:18px;right:18px;display:flex;align-items:center;gap:8px;font-size:clamp(9px,1.1vw,11px);font-weight:750;letter-spacing:1.5px;color:#94a3b8;z-index:2;text-transform:uppercase}
+.poster-footer-bar.playable{color:#fff}
+.poster-two .poster-footer-bar.playable{color:#38bdf8}
+.poster-three .poster-footer-bar.playable{color:#34d399}
+.poster-footer-bar .poster-status-dot{width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor;flex-shrink:0}
+.poster-play-arrow{margin-left:auto;font-size:15px;font-weight:700;transition:transform .2s ease}
+.playable-poster:hover .poster-play-arrow{transform:translate(3px,-3px)}
+@media(max-width:1000px){.game-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}}
+@media(max-width:700px){.is-games .coming-stage{padding:27px 25px}.is-games .coming-copy h1{font-size:36px}.is-games .coming-copy h2{font-size:22px}.game-gallery{gap:16px 13px;margin-top:26px}.poster-footer-bar{bottom:10px;left:12px;right:12px;font-size:9px}}
 
 /* Cinema-night palette and motion. Everything stays local and lightweight. */
 :root{--page:#f8f4ff;--surface:#fff;--text:#292047;--muted:#706482;--border:#e9def6;--accent:#7938c8;--toggle:#f0e8fb;--banner:#efe1ff;--shadow:0 14px 32px #7338c825}

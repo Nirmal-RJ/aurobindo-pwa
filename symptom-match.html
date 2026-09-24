@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d16">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Probable Cause Pairing · Aurobindo Pharmacy</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="symptom-match.css?v=14">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="sm-header">
+    <div class="sm-header-inner">
+      <div class="sm-header-brand-wrap">
+        <a href="index.html#/games" class="sm-brand" title="Aurobindo Celebration Hub">
+          <img src="logo.png" alt="Aurobindo Pharmacy" class="sm-brand-logo">
+          <div class="sm-brand-text">
+            <span class="sm-brand-title">Aurobindo Pharmacy</span>
+            <span class="sm-brand-badge">Game 02 · Probable Cause Pairing</span>
+          </div>
+        </a>
+      </div>
+      <div class="sm-header-actions">
+        <button id="sm-btn-sound" class="sm-btn-icon" type="button" aria-label="Toggle Sound"
+          title="Sound Effects">🔊</button>
+        <button id="sm-btn-theme" class="sm-btn-icon" type="button" aria-label="Toggle Theme" title="Theme">☀️</button>
+        <a href="index.html#/games" class="sm-btn-back">
+          <span aria-hidden="true">←</span> Back to Games
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="sm-main">
+
+    <!-- Intro View -->
+    <section id="sm-intro-view" class="sm-intro-card">
+      <span class="sm-intro-tag">HPLC Troubleshooting</span>
+      <h1 class="sm-intro-title">Probable Cause Pairing</h1>
+      <p class="sm-intro-desc">
+        Pair each chromatographic symptom on the left with its probable cause on the right.
+        Tap to connect or drag cables directly between the sockets!
+      </p>
+
+      <div class="sm-intro-stats">
+        <div class="sm-stat-box">
+          <strong>6</strong>
+          <span>Symptoms</span>
+        </div>
+        <div class="sm-stat-box">
+          <strong>6</strong>
+          <span>Probable Causes</span>
+        </div>
+        <div class="sm-stat-box">
+          <strong>60s</strong>
+          <span>Time Limit</span>
+        </div>
+      </div>
+
+      <button id="sm-btn-start" class="sm-btn-primary" type="button">
+        Start Challenge <span aria-hidden="true">▶</span>
+      </button>
+    </section>
+
+    <!-- Gameplay View -->
+    <section id="sm-game-view" class="sm-gameplay" hidden>
+      <!-- Status Bar -->
+      <div class="sm-status-bar">
+        <div class="sm-status-pill">
+          <span>Connected:</span>
+          <strong id="sm-connected-count">0 / 6</strong>
+        </div>
+        <div class="sm-status-pill">
+          <span>Time:</span>
+          <span id="sm-timer-text" class="sm-time-badge">60s</span>
+        </div>
+      </div>
+
+      <div class="sm-instructions-banner">
+        <strong>Tip:</strong> Tap a Symptom card, then tap its Probable Cause to connect them with a cable. Tap any
+        connected card to disconnect.
+      </div>
+
+      <!-- Matching Arena -->
+      <div class="sm-arena-container">
+        <!-- SVG Connections Layer -->
+        <svg id="sm-wires-svg" class="sm-canvas-overlay" aria-hidden="true">
+          <g id="sm-wires-group"></g>
+          <path id="sm-drag-wire" class="sm-wire wire-active" style="display: none;"></path>
+        </svg>
+
+        <div class="sm-arena-grid">
+          <!-- Left Column: Symptoms -->
+          <div class="sm-column sm-column-left">
+            <div class="sm-column-header">
+              <span>⚠️ Symptoms</span>
+              <span>Port</span>
+            </div>
+            <div id="sm-symptoms-list" class="sm-column"></div>
+          </div>
+
+          <!-- Right Column: Probable Causes -->
+          <div class="sm-column sm-column-right">
+            <div class="sm-column-header">
+              <span>Port</span>
+              <span>🔍 Probable Causes</span>
+            </div>
+            <div id="sm-causes-list" class="sm-column"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="sm-action-bar">
+        <button id="sm-btn-clear" class="sm-btn-secondary" type="button">
+          <span aria-hidden="true">↺</span> Clear Lines
+        </button>
+        <button id="sm-btn-submit" class="sm-btn-submit" type="button" disabled>
+          Submit Connections <span aria-hidden="true">✓</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Results Modal -->
+    <div id="sm-results-modal" class="sm-modal-backdrop" hidden>
+      <div class="sm-modal-card" role="dialog" aria-labelledby="sm-modal-heading">
+        <div class="sm-modal-badge" aria-hidden="true">🏆</div>
+        <h2 id="sm-modal-heading" class="sm-modal-title">Probable Cause Pairing Report</h2>
+        <p class="sm-modal-subtitle">Review your diagnostic accuracy</p>
+
+        <div class="sm-score-banner">
+          <div>
+            <div id="sm-score-number" class="sm-score-number">0 / 6</div>
+            <div class="sm-score-label">Correct Matches</div>
+            <div id="sm-score-stars" class="sm-stars-container">★★★</div>
+          </div>
+          <div>
+            <div id="sm-time-taken" class="sm-score-number" style="font-size: 1.8rem; color: var(--cyan);">0s</div>
+            <div class="sm-score-label">Time Taken</div>
+          </div>
+        </div>
+
+        <div class="sm-review-section">
+          <div class="sm-review-heading">
+            <span>Symptom ➔ Probable Cause</span>
+            <span>Status</span>
+          </div>
+          <div id="sm-review-list" class="sm-review-list"></div>
+        </div>
+
+        <div class="sm-modal-actions">
+          <button id="sm-btn-retry" class="sm-btn-primary" type="button">
+            Play Again <span aria-hidden="true">↺</span>
+          </button>
+          <a href="index.html#/games" class="sm-btn-secondary">
+            Exit to Games Hub
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Confetti Canvas -->
+  <canvas id="sm-confetti-canvas" class="sm-confetti-canvas"></canvas>
+
+  <script src="symptom-match.js?v=14"></script>
+</body>
+
+</html>
