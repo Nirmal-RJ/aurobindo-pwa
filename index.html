@@ -23,7 +23,7 @@
       if (l === 'te' || l === 'hi' || l === 'en') document.documentElement.lang = l;
     } catch (_) { }
   </script>
-  <link rel="stylesheet" href="./styles.css?v=18">
+  <link rel="stylesheet" href="./styles.css?v=23">
   <script src="./tile-match.js?v=18" defer></script>
   <script src="./app.js?v=18" defer></script>
 </head>
@@ -394,17 +394,18 @@
           </div>
         </a>
 
-        <article class="game-poster poster-four" aria-labelledby="game-four-title">
-          <div class="poster-card-wrap" style="opacity: 0.2;">
+        <a class="game-poster poster-four playable-poster" href="chromatogram.html" aria-labelledby="game-four-title">
+          <div class="poster-card-wrap">
             <img src="assets/game-4-card.png" alt="Game 4: Swipe the Right Action" class="poster-card-image"
               loading="lazy">
             <h2 id="game-four-title" class="sr-only" data-i18n="gameFour">Swipe the Right Action</h2>
-            <div class="poster-footer-bar">
+            <div class="poster-footer-bar playable">
               <span class="poster-status-dot"></span>
-              <span data-i18n="comingSoon">COMING SOON</span>
+              <span data-i18n="playGame">PLAY GAME</span>
+              <span class="poster-play-arrow" aria-hidden="true">↗</span>
             </div>
           </div>
-        </article>
+        </a>
       </section>
       <div class="page-teaser"><svg class="icon" aria-hidden="true">
           <use href="#i-spark" />

@@ -1,6 +1,6 @@
 const CACHE_PREFIX = 'aurobindo-shell-';
-const CACHE = `${CACHE_PREFIX}v19`;
-const ASSETS = ['./', './index.html', './styles.css?v=18', './app.js?v=18', './tile-match.js?v=18', './symptom-match.html', './symptom-match.css?v=18', './symptom-match.js?v=18', './assets/hpcl-logo.png', './assets/game-1-card.png', './assets/game-2-card.png', './assets/game-3-card.png', './assets/game-4-card.png', './logo.png', './icon.svg', './icons/icon-192.png', './icons/icon-512.png', './manifest.webmanifest'];
+const CACHE = `${CACHE_PREFIX}v23`;
+const ASSETS = ['./', './index.html', './styles.css?v=23', './app.js?v=18', './tile-match.js?v=18', './symptom-match.html', './symptom-match.css?v=18', './symptom-match.js?v=18', './chromatogram.html', './chromatogram.css?v=22', './chromatogram.js?v=21', './assets/toggle%20button.png', './assets/4%20arrow%20toggle%20outline.png', './assets/hpcl-logo.png', './assets/game-1-card.png', './assets/game-2-card.png', './assets/game-3-card.png', './assets/game-4-card.png', './logo.png', './icon.svg', './icons/icon-192.png', './icons/icon-512.png', './manifest.webmanifest'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
 });
@@ -10,7 +10,9 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET' || new URL(event.request.url).origin !== self.location.origin) return;
   if (event.request.mode === 'navigate') {
-    event.respondWith(fetch(event.request).catch(() => caches.match(new URL('./index.html', self.registration.scope).href)));
+    event.respondWith(fetch(event.request).catch(async () =>
+      (await caches.match(event.request, { ignoreSearch: true })) ||
+      caches.match(new URL('./index.html', self.registration.scope).href)));
     return;
   }
   event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request)));

@@ -60,14 +60,14 @@ html[lang="te"] .coming-copy h2,html[lang="hi"] .coming-copy h2{letter-spacing:0
 .game-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:19px;margin-top:32px}
 .game-poster{position:relative;isolation:isolate;border-radius:20px;background:transparent;color:#fff;border:none;box-shadow:none;transition:transform .3s;text-decoration:none;display:block}
 .poster-card-wrap{position:relative;width:100%;aspect-ratio:507/685;border-radius:20px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,0.35);transition:transform .3s cubic-bezier(0.16,1,0.3,1),box-shadow .3s ease}
-.poster-card-image{width:100%;height:100%;display:block;object-fit:cover;border-radius:20px}
+.poster-card-image{width:100%;height:100%;display:block;object-fit:cover;object-position:center bottom;border-radius:20px}
 .playable-poster{cursor:pointer}
 .playable-poster .poster-card-wrap:hover{transform:translateY(-8px) scale(1.02)}
 .poster-one .poster-card-wrap:hover{box-shadow:0 16px 36px rgba(168,85,247,0.45)}
 .poster-two .poster-card-wrap:hover{box-shadow:0 16px 36px rgba(56,189,248,0.5)}
 .poster-three .poster-card-wrap:hover{box-shadow:0 16px 36px rgba(52,211,153,0.5)}
 .poster-four .poster-card-wrap:hover{box-shadow:0 16px 36px rgba(244,63,94,0.45)}
-.poster-footer-bar{position:absolute;bottom:14px;left:18px;right:18px;display:flex;align-items:center;gap:8px;font-size:clamp(9px,1.1vw,11px);font-weight:750;letter-spacing:1.5px;color:#94a3b8;z-index:2;text-transform:uppercase}
+.poster-footer-bar{position:absolute;bottom:0;left:18px;right:18px;height:12%;display:flex;align-items:center;gap:8px;line-height:1;font-size:clamp(9px,1.1vw,11px);font-weight:750;letter-spacing:1.5px;color:#94a3b8;z-index:2;text-transform:uppercase}
 .poster-footer-bar.playable{color:#fff}
 .poster-two .poster-footer-bar.playable{color:#38bdf8}
 .poster-three .poster-footer-bar.playable{color:#34d399}
@@ -75,7 +75,7 @@ html[lang="te"] .coming-copy h2,html[lang="hi"] .coming-copy h2{letter-spacing:0
 .poster-play-arrow{margin-left:auto;font-size:15px;font-weight:700;transition:transform .2s ease}
 .playable-poster:hover .poster-play-arrow{transform:translate(3px,-3px)}
 @media(max-width:1000px){.game-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}}
-@media(max-width:700px){.is-games .coming-stage{padding:27px 25px}.is-games .coming-copy h1{font-size:36px}.is-games .coming-copy h2{font-size:22px}.game-gallery{gap:16px 13px;margin-top:26px}.poster-footer-bar{bottom:10px;left:12px;right:12px;font-size:9px}}
+@media(max-width:700px){.is-games .coming-stage{padding:27px 25px}.is-games .coming-copy h1{font-size:36px}.is-games .coming-copy h2{font-size:22px}.game-gallery{gap:16px 13px;margin-top:26px}.poster-footer-bar{left:12px;right:12px;font-size:9px}}
 
 /* Cinema-night palette and motion. Everything stays local and lightweight. */
 :root{--page:#f8f4ff;--surface:#fff;--text:#292047;--muted:#706482;--border:#e9def6;--accent:#7938c8;--toggle:#f0e8fb;--banner:#efe1ff;--shadow:0 14px 32px #7338c825}

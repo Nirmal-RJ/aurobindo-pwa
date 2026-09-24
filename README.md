@@ -16,6 +16,10 @@ The service worker caches the app shell, translations, logo and icons. When depl
 
 ## Edit
 
+Game 4 is available from the Games gallery or directly at `chromatogram.html`. It uses the saved light/dark theme, five questions, randomized directional answers, and one 45-second deadline. Players can drag/swipe the supplied joystick, tap an action, or use arrow keys. Results include the score, answer review, retry, and exit. The game and both joystick assets are cached for offline use after an online visit.
+
+Run `npm test` for Game 4 behavior checks (answer key, timeout, duplicate input, swipe cancellation, keyboard controls, replay, theme, and browser history restoration). These use a simulated DOM and clock; responsive visual QA still requires a browser.
+
 - `index.html`: layout, six activity cards and cinema illustration
 - `styles.css`: responsive layout and both themes
 - `app.js`: translated copy, hash-based page routing, local preferences, LED layout and installation
