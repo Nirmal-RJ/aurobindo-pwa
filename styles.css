@@ -891,3 +891,47 @@ button:focus-visible,a:focus-visible{outline-color:#a35cee}
 }
 
 
+
+/* A short, landscape-shaped hero keeps mobile activities within easy reach. */
+.hero-carousel-controls,.hero-scores{display:none}
+@media(max-width:700px){
+  #home-view .hero{display:block;min-height:0;height:clamp(190px,56vw,260px);touch-action:pan-y pinch-zoom}
+  #home-view .hero-copy,#home-view .hero-art,#home-view .hero-scores{position:absolute;inset:0 0 38px;width:100%;max-width:none;margin:0;padding:12px 24px 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;transition:transform .35s ease;will-change:transform}
+  #home-view .hero-copy{transform:translateX(0)}
+  #home-view .hero-art{transform:translateX(100%)}
+  #home-view .hero[data-slide="1"] .hero-copy{transform:translateX(-100%)}
+  #home-view .hero[data-slide="1"] .hero-art{transform:translateX(0)}
+  #home-view .hero-eyebrow{font-size:8px;line-height:1.5;letter-spacing:1px;padding:4px 8px;flex-shrink:0}
+  #home-view .hero-eyebrow .icon{width:12px;height:12px}
+  #home-view .hero-logo-wrap{position:relative;margin:0;min-height:0;flex:1;justify-content:center;width:100%}
+  #home-view .hero-hpcl-logo{position:absolute;inset:0;margin:auto;width:100%;max-width:230px;height:100%;max-height:135px;object-fit:contain;animation:none;filter:drop-shadow(0 3px 8px #0004)}
+  #home-view .hero-bottom{margin:0;gap:8px;font-size:9px;line-height:1.5;letter-spacing:0;animation:none;flex-shrink:0}
+  #home-view .hero-bottom .icon{width:12px;height:12px}
+  #home-view .stage-art{width:100%;height:calc(100% - 18px);max-height:none;animation:none}
+  #home-view .art-caption{margin:0;font-size:7px;line-height:1.5;letter-spacing:1px;flex-shrink:0}
+  .hero-carousel-controls{position:absolute;bottom:2px;left:50%;transform:translateX(-50%);z-index:4;display:flex;align-items:center;justify-content:center;gap:2px}
+  .hero-carousel-controls button{height:36px;border:0;background:transparent;color:#fff;font-size:10px;border-radius:8px}
+  .hero-dot{width:36px;display:grid;place-items:center;padding:0}
+  .hero-dot span{width:7px;height:7px;background:#ffffff70;border-radius:10px;transition:width .2s}
+  .hero-dot[aria-pressed="true"] span{width:19px;background:#fff}
+  .hero-carousel-pause{min-width:44px;padding:0 6px}
+  .hero-carousel-controls button:focus-visible{outline:2px solid #fff;outline-offset:-3px}
+  #home-view .lights-toggle{right:10px;bottom:8px;width:26px;height:26px}
+  #home-view .activities{padding-top:20px}
+  #home-view .section-heading{margin-bottom:14px}
+}
+@media(prefers-reduced-motion:reduce){#home-view .hero-copy,#home-view .hero-art,.hero-dot span{transition:none}}
+
+.hero-carousel-pause svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
+.hero-carousel-pause .carousel-play-icon{display:none}
+.hero-carousel-pause[aria-pressed="true"] .carousel-play-icon{display:block}
+.hero-carousel-pause[aria-pressed="true"] .carousel-pause-icon{display:none}
+@media(max-width:700px){
+ #home-view .hero-scores{transform:translateX(100%);text-align:center;color:#fff5dd;gap:7px}
+ #home-view .hero[data-slide="2"] .hero-copy,#home-view .hero[data-slide="2"] .hero-art{transform:translateX(-100%)}
+ #home-view .hero[data-slide="2"] .hero-scores{transform:translateX(0)}
+ .hero-scores-icon{width:35px;height:35px;fill:none;stroke:#ffdf7a;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 9px #f1c96455);flex-shrink:0}
+ .hero-scores>strong{font-size:23px;line-height:1.2}.hero-scores>span{font-size:10px;line-height:1.5;max-width:300px}
+ .hero-scores-link{display:inline-flex;align-items:center;gap:12px;min-height:36px;padding:7px 14px;border-radius:8px;background:#ffe398;color:#39235e;text-decoration:none;font-size:11px;font-weight:700}
+}
+@media(prefers-reduced-motion:reduce){#home-view .hero-scores{transition:none}}

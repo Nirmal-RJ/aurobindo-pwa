@@ -62,6 +62,7 @@ const pages = {
 };
 let activePage = null;
 let homeScroll = 0;
+let themeBeforeScoreboard = null;
 
 function readPreference(key, fallback) {
   try {
@@ -126,7 +127,17 @@ function setTheme(theme) {
   document.documentElement.dataset.theme = theme;
   document.querySelectorAll('[data-set-theme]').forEach(button => { button.setAttribute('aria-pressed', String(button.dataset.setTheme === theme)); });
   document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#100d25' : '#f8f4ff';
-  savePreference('aurobindo-theme', theme);
+  if (themeBeforeScoreboard === null) savePreference('aurobindo-theme', theme);
+}
+
+function setScoreboardTheme(isScoreboard) {
+  if (isScoreboard && themeBeforeScoreboard === null) {
+    themeBeforeScoreboard = document.documentElement.dataset.theme;
+    setTheme('dark');
+  } else if (!isScoreboard && themeBeforeScoreboard !== null) {
+    setTheme(themeBeforeScoreboard);
+    themeBeforeScoreboard = null;
+  }
 }
 
 const languageTrigger = document.querySelector('#language');
@@ -214,6 +225,10 @@ document.querySelector('.language-control').addEventListener('focusout', event =
 document.querySelectorAll('[data-set-theme]').forEach(button => button.addEventListener('click', () => setTheme(button.dataset.setTheme)));
 function updatePageContent() {
   if (!activePage) return;
+  if (activePage === 'scores') {
+    document.title = `${translations[language].scoresTitle} · ${translations[language].footerBrand}`;
+    return;
+  }
   const dictionary = translations[language];
   const [headline, description, teaser] = pageTranslations[language][activePage];
   const copy = { title: dictionary[`${activePage}Title`], tag: dictionary[`${activePage}Tag`], headline, description, teaser };
@@ -221,11 +236,18 @@ function updatePageContent() {
   document.title = `${copy.title} · ${dictionary.footerBrand}`;
 }
 function renderRoute(focus = true) {
+  if (window.Account.render(focus)) {
+    setScoreboardTheme(false);
+    if (window.TileMatch && window.TileMatch.leave) window.TileMatch.leave();
+    activePage = null;
+    return;
+  }
   // Hash routes work on static hosting, in subdirectories, and offline.
   if (location.hash && !location.hash.startsWith('#/')) return;
   const route = location.hash.slice(2).replace(/\/$/, '');
   const isTileMatch = route === 'games/tile-match';
   const next = isTileMatch ? null : (Object.keys(pages).find(key => pages[key].route === route) || null);
+  setScoreboardTheme(next === 'scores');
   if (route && !next && !isTileMatch) history.replaceState(null, '', '#/');
   const previous = activePage;
   if (!previous && (next || isTileMatch)) homeScroll = window.scrollY;
@@ -234,6 +256,8 @@ function renderRoute(focus = true) {
   const homeView = document.querySelector('#home-view');
   const section = document.querySelector('#section-view');
   const tmView = document.querySelector('#tile-match-view');
+  const leaderboard = document.querySelector('#leaderboard-view');
+  leaderboard.hidden = next !== 'scores';
 
   document.querySelector('#toast').classList.remove('visible');
   closeLanguageMenu();
@@ -257,7 +281,12 @@ function renderRoute(focus = true) {
   }
 
   homeView.hidden = !!next;
-  section.hidden = !next;
+  section.hidden = !next || next === 'scores';
+  if (next === 'scores') {
+    updatePageContent();
+    if (focus) { window.scrollTo(0, 0); document.querySelector('#leaderboard-title').focus({ preventScroll: true }); }
+    return;
+  }
   if (next) {
     section.className = `section-page ${pages[next].color}${next === 'games' ? ' is-games' : ''}`;
     document.querySelector('.game-gallery').hidden = next !== 'games';
