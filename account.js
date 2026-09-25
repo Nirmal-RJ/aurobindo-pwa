@@ -85,6 +85,9 @@
       return;
     }
     profile = next;
+    if (document.activeElement && typeof document.activeElement.blur === 'function') {
+      document.activeElement.blur();
+    }
     $('account-error').hidden = true;
     $('registration-error').hidden = true;
     $('login-form').reset();
