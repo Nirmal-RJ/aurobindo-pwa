@@ -1,5 +1,5 @@
 /**
- * Aurobindo Pharmacy · The Celebration Hub
+ * Aurobindo Pharma · The Celebration Hub
  * Game 2: Symptom → Probable Cause Matching
  */
 

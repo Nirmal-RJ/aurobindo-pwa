@@ -20,4 +20,4 @@ http.createServer(async (request, response) => {
     response.writeHead(200, { 'Content-Type': mime[path.extname(file)], 'Cache-Control': 'no-cache', 'X-Content-Type-Options': 'nosniff' });
     response.end(body);
   } catch { response.writeHead(404).end('Not found'); }
-}).listen(port, '0.0.0.0', () => console.log(`Aurobindo Pharmacy is running at http://localhost:${port}`));
+}).listen(port, '0.0.0.0', () => console.log(`Aurobindo Pharma is running at http://localhost:${port}`));

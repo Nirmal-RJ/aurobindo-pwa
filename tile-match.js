@@ -85,7 +85,7 @@ window.TileMatch = (() => {
     if (phase === 'results') renderResults();
     if (!$('#tile-match-view').hidden) {
       const footerBrand = document.querySelector('.footer-brand');
-      document.title = `${text.title} · ${footerBrand ? footerBrand.textContent : 'Aurobindo Pharmacy'}`;
+      document.title = `${text.title} · ${footerBrand ? footerBrand.textContent : 'Aurobindo Pharma'}`;
     }
   }
 

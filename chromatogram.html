@@ -1,50 +1,124 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f8f4ff">
-  <title>Chromatogram Defect · Aurobindo Pharmacy</title>
+  <title>Chromatogram Defect · Aurobindo Pharma</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
 
   <link rel="stylesheet" href="chromatogram.css?v=23">
   <script src="chromatogram.js?v=22" defer></script>
 </head>
+
 <body>
   <header class="header">
-    <a class="brand" href="index.html#/games"><img src="logo.png" alt="Aurobindo Pharmacy"><span>Aurobindo Pharmacy<small>THE CELEBRATION HUB</small></span></a>
+    <a class="brand" href="index.html#/games"><img src="logo.png" alt="Aurobindo Pharma"><span>Aurobindo
+        Pharma<small>THE CELEBRATION HUB</small></span></a>
     <div class="header-actions"><a class="back" href="index.html#/games">← <span>Back to Games</span></a></div>
   </header>
   <main class="stage">
-    <div class="stage-top"><span class="game-tag">GAME 04</span><span class="stage-category">HPLC TROUBLESHOOTING</span><span class="live-dot" aria-hidden="true"></span></div>
+    <div class="stage-top"><span class="game-tag">GAME 04</span><span class="stage-category">HPLC
+        TROUBLESHOOTING</span><span class="live-dot" aria-hidden="true"></span></div>
     <section id="intro" class="intro" aria-labelledby="intro-title">
       <div class="intro-copy">
         <p class="eyebrow">READ THE DEFECT. MAKE YOUR MOVE.</p>
         <h1 id="intro-title">Chromatogram<br> <em>Defect</em></h1>
         <p class="subtitle">Choose the First Action</p>
-        <div class="intro-stats"><span><strong>05</strong>questions</span><span><strong>04</strong>directions</span><span><strong>45<span>s</span></strong>one timer</span></div>
-        <div class="how-to"><h2>How to Play</h2><p>Choose the correct <strong>first action</strong> for each chromatogram defect.</p><ol><li>Read the defect and the four actions.</li><li><strong>Swipe the joystick</strong> toward your answer, or <strong>tap an action</strong>.</li><li>Answer <strong>5 questions in 45 seconds</strong>.</li></ol></div>
+        <div class="intro-stats">
+          <span><strong>05</strong>questions</span><span><strong>04</strong>directions</span><span><strong>45<span>s</span></strong>one
+            timer</span>
+        </div>
+        <div class="how-to">
+          <h2>How to Play</h2>
+          <p>Choose the correct <strong>first action</strong> for each chromatogram defect.</p>
+          <ol>
+            <li>Read the defect and the four actions.</li>
+            <li><strong>Swipe the joystick</strong> toward your answer, or <strong>tap an action</strong>.</li>
+            <li>Answer <strong>5 questions in 45 seconds</strong>.</li>
+          </ol>
+        </div>
       </div>
-      <div class="intro-art" aria-hidden="true"><span class="art-label">YOUR NEXT MOVE MATTERS</span><div class="ready-words"><span>GET.</span><span>SET.</span><strong>SWIPE!</strong></div><span class="art-caption">A little focus. The right first action.</span></div>
-      <div class="navigation-controls"><button class="nav-arrow exit-arrow" type="button" data-nav="exit"><span>←</span><span>Swipe left<small>to exit</small></span></button><div class="joystick nav-joystick" tabindex="0" role="group" aria-label="Swipe left to exit or right to start" data-stick="intro"><img class="joystick-base" src="assets/4%20arrow%20toggle%20outline.png" alt="" draggable="false"><img class="joystick-knob" src="assets/toggle%20button.png" alt="" draggable="false"></div><button class="nav-arrow start-arrow" type="button" data-nav="start"><span>Swipe right<small>to start</small></span><span>→</span></button></div>
+      <div class="intro-art" aria-hidden="true"><span class="art-label">YOUR NEXT MOVE MATTERS</span>
+        <div class="ready-words"><span>GET.</span><span>SET.</span><strong>SWIPE!</strong></div><span
+          class="art-caption">A little focus. The right first action.</span>
+      </div>
+      <div class="navigation-controls"><button class="nav-arrow exit-arrow" type="button"
+          data-nav="exit"><span>←</span><span>Swipe left<small>to exit</small></span></button>
+        <div class="joystick nav-joystick" tabindex="0" role="group" aria-label="Swipe left to exit or right to start"
+          data-stick="intro"><img class="joystick-base" src="assets/4%20arrow%20toggle%20outline.png" alt=""
+            draggable="false"><img class="joystick-knob" src="assets/toggle%20button.png" alt="" draggable="false">
+        </div><button class="nav-arrow start-arrow" type="button" data-nav="start"><span>Swipe right<small>to
+              start</small></span><span>→</span></button>
+      </div>
       <p class="input-hint">Swipe the joystick, tap a button, or use your arrow keys.</p>
     </section>
 
     <section id="game" class="game" aria-labelledby="defect" hidden>
-      <div class="round-status"><span id="question-count">Question 1 / 5</span><span class="timer"><span aria-hidden="true">◷</span> <strong id="seconds">45</strong><span>s left</span></span></div>
-      <div id="time-bar" class="time-bar" role="progressbar" aria-label="Time remaining" aria-valuemin="0" aria-valuemax="45" aria-valuenow="45"><div id="time-fill"></div></div>
-      <div class="play-layout"><div class="defect-panel"><p class="eyebrow">WHAT IS THE CORRECT FIRST ACTION?</p><div class="defect-display"><span class="defect-label">CHROMATOGRAM DEFECT</span><h2 id="defect" tabindex="-1">High Pressure</h2><span class="chart-caption">HPLC · DIAGNOSTIC CHALLENGE</span></div><p class="defect-prompt">Read the defect.<br><strong>Choose the first action.</strong></p></div>
-      <div class="choice-panel"><div class="direction-grid" role="group" aria-label="Choose your first action"><button type="button" class="action action-up" data-direction="up"><span class="direction-marker">↑</span><span class="action-text"></span></button><button type="button" class="action action-left" data-direction="left"><span class="direction-marker">←</span><span class="action-text"></span></button><div class="joystick play-joystick" tabindex="0" role="group" aria-label="Drag or swipe toward an action. You can also use the arrow keys." data-stick="game"><img class="joystick-base" src="assets/4%20arrow%20toggle%20outline.png" alt="" draggable="false"><img class="joystick-knob" src="assets/toggle%20button.png" alt="" draggable="false"></div><button type="button" class="action action-right" data-direction="right"><span class="direction-marker">→</span><span class="action-text"></span></button><button type="button" class="action action-down" data-direction="down"><span class="direction-marker">↓</span><span class="action-text"></span></button></div><p id="feedback" class="feedback" role="status" aria-live="polite">Swipe toward your answer</p><p class="input-hint">You can also tap an action or use ↑ → ↓ ←</p></div></div>
+      <div class="round-status"><span id="question-count">Question 1 / 5</span><span class="timer"><span
+            aria-hidden="true">◷</span> <strong id="seconds">45</strong><span>s left</span></span></div>
+      <div id="time-bar" class="time-bar" role="progressbar" aria-label="Time remaining" aria-valuemin="0"
+        aria-valuemax="45" aria-valuenow="45">
+        <div id="time-fill"></div>
+      </div>
+      <div class="play-layout">
+        <div class="defect-panel">
+          <p class="eyebrow">WHAT IS THE CORRECT FIRST ACTION?</p>
+          <div class="defect-display"><span class="defect-label">CHROMATOGRAM DEFECT</span>
+            <h2 id="defect" tabindex="-1">High Pressure</h2><span class="chart-caption">HPLC · DIAGNOSTIC
+              CHALLENGE</span>
+          </div>
+          <p class="defect-prompt">Read the defect.<br><strong>Choose the first action.</strong></p>
+        </div>
+        <div class="choice-panel">
+          <div class="direction-grid" role="group" aria-label="Choose your first action"><button type="button"
+              class="action action-up" data-direction="up"><span class="direction-marker">↑</span><span
+                class="action-text"></span></button><button type="button" class="action action-left"
+              data-direction="left"><span class="direction-marker">←</span><span class="action-text"></span></button>
+            <div class="joystick play-joystick" tabindex="0" role="group"
+              aria-label="Drag or swipe toward an action. You can also use the arrow keys." data-stick="game"><img
+                class="joystick-base" src="assets/4%20arrow%20toggle%20outline.png" alt="" draggable="false"><img
+                class="joystick-knob" src="assets/toggle%20button.png" alt="" draggable="false"></div><button
+              type="button" class="action action-right" data-direction="right"><span
+                class="direction-marker">→</span><span class="action-text"></span></button><button type="button"
+              class="action action-down" data-direction="down"><span class="direction-marker">↓</span><span
+                class="action-text"></span></button>
+          </div>
+          <p id="feedback" class="feedback" role="status" aria-live="polite">Swipe toward your answer</p>
+          <p class="input-hint">You can also tap an action or use ↑ → ↓ ←</p>
+        </div>
+      </div>
     </section>
 
     <section id="results" class="results" aria-labelledby="result-title" hidden>
-      <div class="result-spark" aria-hidden="true">✦</div><p class="eyebrow">CHALLENGE COMPLETE</p><h2 id="result-title" tabindex="-1">Congratulations!</h2><p id="result-message"></p><div class="score-label">Your Score</div><div class="score"><strong id="score">0</strong><span>/ 5</span></div><p id="result-detail" class="result-detail"></p>
-      <div class="navigation-controls"><button class="nav-arrow retry-arrow" type="button" data-nav="start"><span>←</span><span>Swipe left<small>to retry</small></span></button><div class="joystick nav-joystick" tabindex="0" role="group" aria-label="Swipe left to retry or right to exit" data-stick="results"><img class="joystick-base" src="assets/4%20arrow%20toggle%20outline.png" alt="" draggable="false"><img class="joystick-knob" src="assets/toggle%20button.png" alt="" draggable="false"></div><button class="nav-arrow exit-arrow" type="button" data-nav="exit"><span>Swipe right<small>to exit</small></span><span>→</span></button></div><p class="input-hint">Swipe, tap, or use the left and right arrow keys.</p>
-      <details class="review"><summary>Review your answers</summary><ol id="review-list"></ol></details>
+      <div class="result-spark" aria-hidden="true">✦</div>
+      <p class="eyebrow">CHALLENGE COMPLETE</p>
+      <h2 id="result-title" tabindex="-1">Congratulations!</h2>
+      <p id="result-message"></p>
+      <div class="score-label">Your Score</div>
+      <div class="score"><strong id="score">0</strong><span>/ 5</span></div>
+      <p id="result-detail" class="result-detail"></p>
+      <div class="navigation-controls"><button class="nav-arrow retry-arrow" type="button"
+          data-nav="start"><span>←</span><span>Swipe left<small>to retry</small></span></button>
+        <div class="joystick nav-joystick" tabindex="0" role="group" aria-label="Swipe left to retry or right to exit"
+          data-stick="results"><img class="joystick-base" src="assets/4%20arrow%20toggle%20outline.png" alt=""
+            draggable="false"><img class="joystick-knob" src="assets/toggle%20button.png" alt="" draggable="false">
+        </div><button class="nav-arrow exit-arrow" type="button" data-nav="exit"><span>Swipe right<small>to
+              exit</small></span><span>→</span></button>
+      </div>
+      <p class="input-hint">Swipe, tap, or use the left and right arrow keys.</p>
+      <details class="review">
+        <summary>Review your answers</summary>
+        <ol id="review-list"></ol>
+      </details>
     </section>
     <footer class="stage-footer"><span>CHOOSE WITH CONFIDENCE</span><span>ONE DEFECT. ONE FIRST ACTION.</span></footer>
   </main>
-  <noscript><p class="no-script">Enable JavaScript to play this game.</p></noscript>
+  <noscript>
+    <p class="no-script">Enable JavaScript to play this game.</p>
+  </noscript>
 </body>
+
 </html>

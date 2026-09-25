@@ -46,7 +46,7 @@
         $('registration-mode').setAttribute('aria-pressed', String(isRegistration));
         $('login-mode').setAttribute('aria-pressed', String(!isRegistration));
       }
-      document.title = `${isProfile ? 'My profile' : isRegistration ? 'Register' : 'Log in'} · Aurobindo Pharmacy`;
+      document.title = `${isProfile ? 'My profile' : isRegistration ? 'Register' : 'Log in'} · Aurobindo Pharma`;
       if (focus) {
         window.scrollTo(0, 0);
         $(isProfile ? 'profile-title' : isRegistration ? 'registration-mode' : 'login-mode').focus({ preventScroll: true });

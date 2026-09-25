@@ -1,4 +1,4 @@
-# Aurobindo Pharmacy
+# Aurobindo Pharma
 
 A lightweight, dependency-free PWA prototype with English, Telugu and Hindi, persistent light/dark themes, and six home-screen activity links. Each opens a dedicated color-matched page with playful translated coming-soon copy, animated ticket artwork, and Back to Home links. The supplied logo is used unchanged; the cinema illustration is inline SVG. The colorful cinema stage includes moving spotlights, floating artwork and confetti, marquee lights, and smooth card interactions. Reduced-motion preferences disable decorative movement and slow the independently pausable LED brightness animation. The language menu supports keyboard navigation, Escape, and outside-click dismissal.
 
