@@ -123,7 +123,7 @@ function setLanguage(next) {
 }
 
 function setTheme(theme) {
-  if (theme !== 'light' && theme !== 'dark') theme = 'light';
+  if (theme !== 'light' && theme !== 'dark') theme = 'dark';
   document.documentElement.dataset.theme = theme;
   document.querySelectorAll('[data-set-theme]').forEach(button => { button.setAttribute('aria-pressed', String(button.dataset.setTheme === theme)); });
   document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#100d25' : '#f8f4ff';

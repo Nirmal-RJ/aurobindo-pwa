@@ -935,3 +935,13 @@ button:focus-visible,a:focus-visible{outline-color:#a35cee}
  .hero-scores-link{display:inline-flex;align-items:center;gap:12px;min-height:36px;padding:7px 14px;border-radius:8px;background:#ffe398;color:#39235e;text-decoration:none;font-size:11px;font-weight:700}
 }
 @media(prefers-reduced-motion:reduce){#home-view .hero-scores{transition:none}}
+
+.brand-demo{display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0}.brand-demo .brand-logo{width:73px;height:32px}.brand-demo .brand-logo img{width:73px;transform:translateY(-2.5px)}.demo-label{font-size:8px;line-height:1;font-weight:750;letter-spacing:1.4px;color:var(--accent);white-space:nowrap}.hero-demo-label{display:block;width:fit-content;font-size:9px;font-weight:750;letter-spacing:2px;color:#ffe398;margin-bottom:12px}
+@media(max-width:700px){.brand-demo .brand-logo{width:60px;height:27px}.brand-demo .brand-logo img{width:60px;transform:translateY(-1.5px)}#home-view .hero-demo-label{font-size:8px;margin:0;line-height:1.2;flex-shrink:0}}
+@media(max-width:440px){.brand-demo .brand-logo{width:54.5px;height:25.5px}.brand-demo .brand-logo img{width:54.5px;transform:none}}
+@media(max-width:355px){.brand-demo .brand-logo{width:47.5px;height:23px}.brand-demo .brand-logo img{width:47.5px}.demo-label{font-size:7px}}
+
+/* Keep the demo identity immediately visible at every screen size. */
+.brand-demo{gap:9px}.demo-label{display:inline-block;background:#ffdb75;color:#30204c;border:1px solid #ffe8a5;border-radius:5px;padding:5px 8px;font-size:11px;line-height:1.1;font-weight:850;letter-spacing:1px;box-shadow:0 2px 8px #0002}
+.hero-demo-label{background:#ffdb75;color:#30204c;border:1px solid #ffe8a5;border-radius:5px;padding:5px 10px;font-size:12px;font-weight:850;letter-spacing:1.3px}
+@media(max-width:700px){#home-view .hero-demo-label{font-size:10px;line-height:1.1;padding:4px 9px}.demo-label{font-size:10px;padding:5px 7px}}

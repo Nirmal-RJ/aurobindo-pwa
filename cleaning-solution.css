@@ -349,3 +349,16 @@ main{max-width:780px;margin:18px auto 50px;padding:0 18px}.panel{background:#fff
   #review-fill { transition: none; }
   #timer-fill, .tile, .slot, .primary { transition: none; }
 }
+
+/* Follow the app theme, defaulting to dark for the demo. */
+html[data-theme="dark"]{color-scheme:dark;background:#100d25;color:#f3edff}
+[data-theme="dark"] body{background:radial-gradient(ellipse at 0 50%,#244b4540,transparent 60%),radial-gradient(ellipse at 100% 90%,#39296350,transparent 60%);color:#f3edff}
+[data-theme="dark"] .panel{background:#1e1932;border-color:#3b3351;box-shadow:0 20px 70px #0003}
+[data-theme="dark"] p,[data-theme="dark"] .back,[data-theme="dark"] .brand small,[data-theme="dark"] .facts,[data-theme="dark"] .game-meta,[data-theme="dark"] .timer-label,[data-theme="dark"] .tray-heading>span:last-child,[data-theme="dark"] .recipe-heading>span,[data-theme="dark"] .result-row span{color:#beb5d0}
+[data-theme="dark"] .facts strong,[data-theme="dark"] #question,[data-theme="dark"] h1{color:#f3edff}
+[data-theme="dark"] h1 em,[data-theme="dark"] .eyebrow,[data-theme="dark"] .timer-label strong,[data-theme="dark"] .score-circle{color:#78d8c2}
+[data-theme="dark"] .tray,[data-theme="dark"] .slots{background:#151225;border-color:#443a56}
+[data-theme="dark"] .tile,[data-theme="dark"] .slot,[data-theme="dark"] .sample-tiles span,[data-theme="dark"] .answer-tile,[data-theme="dark"] .button{background:#2b263c;color:#eee6fa;border-color:#514961}
+[data-theme="dark"] .tile strong,[data-theme="dark"] .slot strong,[data-theme="dark"] .sample-tiles strong,[data-theme="dark"] .answer-tile strong{color:#78d8c2}
+[data-theme="dark"] .slot.filled{background:#23463e;color:#e4f6ec;border-color:#6ab59b}
+[data-theme="dark"] .feedback.success{color:#78d8c2}[data-theme="dark"] .feedback.error{color:#ffb095}

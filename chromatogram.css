@@ -8,3 +8,46 @@
 @media(max-height:600px) and (min-width:650px){.header{min-height:60px;padding-top:8px;padding-bottom:8px}.stage{margin-top:0;padding-top:16px}.stage-top{margin-bottom:16px}.play-layout{grid-template-columns:1fr 1.1fr;gap:24px;min-height:0}.direction-grid{grid-template-columns:minmax(0,1fr) 90px minmax(0,1fr);gap:7px}.action{min-height:65px;font-size:11px}.time-bar{margin-bottom:16px}.stage-footer{margin-top:18px}.game{padding-bottom:0}}
 @media(max-width:520px) and (max-height:760px){.game .chart-caption{display:none}.game .defect-display{padding:12px}.game .defect-display h2{margin:8px 0 0;font-size:26px}.stage-top{margin-bottom:16px}.game .time-bar{margin-bottom:14px}.game .defect-panel .eyebrow{font-size:8px;margin-bottom:8px}.game .direction-grid{grid-template-columns:minmax(0,1fr) 92px minmax(0,1fr)}.game .action{min-height:65px}.game .feedback{margin-top:9px}.stage-footer{margin-top:16px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+
+/* Give the instructions priority over the intro title and decoration. */
+#intro h1{font-size:34px;line-height:1.15;letter-spacing:-1px}
+#intro .subtitle{font-size:16px;margin:8px 0 12px}
+#intro .intro-stats{padding:10px 0;gap:24px}
+#intro .intro-stats strong{font-size:20px}
+#intro .how-to{font-size:16px;line-height:1.5;margin-top:16px;color:var(--ink)}
+#intro .how-to h2{font-size:20px;margin-bottom:8px}
+#intro .how-to ol{padding-left:23px;margin-top:10px}
+#intro .how-to li{padding-left:3px;margin-top:7px}
+@media(max-width:760px){
+ .stage:has(#intro:not([hidden])){padding-top:14px}
+ .stage:has(#intro:not([hidden])) .stage-top{margin-bottom:12px}
+ #intro{grid-template-columns:1fr}
+ #intro .intro-art{display:none}
+ #intro .intro-copy{text-align:left}
+ #intro .eyebrow{display:none}
+ #intro h1{font-size:28px;letter-spacing:-.8px}
+ #intro h1 br{display:none}
+ #intro .intro-stats{justify-content:space-between;gap:10px;padding:9px 0}
+ #intro .intro-stats>span{display:flex;align-items:baseline;gap:5px;font-size:11px}
+ #intro .intro-stats strong{display:inline;font-size:18px}
+ #intro .intro-stats strong span{font-size:12px}
+ #intro .navigation-controls{margin-top:16px;gap:10px}
+ #intro .nav-joystick{width:76px}
+ #intro .nav-arrow{font-size:12px;min-height:48px;padding:8px}
+ #intro .nav-arrow small{font-size:11px}
+ #intro .input-hint{margin-top:6px;font-size:11px}
+ .stage:has(#intro:not([hidden])) .stage-footer{margin-top:12px;padding-top:10px}
+}
+@media(max-width:520px){
+ body:has(#intro:not([hidden])) .header{min-height:60px;padding-top:8px;padding-bottom:8px}
+ #intro h1{font-size:26px}
+ #intro .subtitle{font-size:15px}
+ #intro .how-to{margin-top:13px}
+ #intro .how-to h2{font-size:19px;margin-bottom:6px}
+}
+@media(max-width:359px){
+ #intro h1{font-size:23px;letter-spacing:-.7px}
+ #intro .intro-stats>span{font-size:10px;gap:4px}
+ #intro .intro-stats strong{font-size:16px}
+ #intro .nav-joystick{width:66px}
+}

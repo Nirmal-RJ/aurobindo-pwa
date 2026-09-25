@@ -2,16 +2,28 @@
   'use strict';
   const key = 'aurobindo-profile';
   const $ = id => document.getElementById(id);
-  const valid = value => value && ['username', 'mobile'].every(field => typeof value[field] === 'string' && value[field].trim());
+  const valid = value => value && ['username'].every(field => typeof value[field] === 'string' && value[field].trim());
   function readProfile() {
     try {
       const value = JSON.parse(localStorage.getItem(key));
       return valid(value) ? value : null;
     } catch (_) { return null; }
   }
-  // Demo sessions always start at welcome; saved details are retained for profile reuse.
-  let profile = null;
-  history.replaceState(null, '', '#/welcome');
+  function returningFromGame() {
+    if (location.hash !== '#/games') return false;
+    try {
+      // A refresh is a new demo opening, even if its referrer is still a game.
+      if (window.performance?.getEntriesByType('navigation')[0]?.type === 'reload') return false;
+      const previous = new URL(document.referrer);
+      return ['cleaning-solution.html', 'symptom-match.html', 'chromatogram.html'].some(file => {
+        const game = new URL(file, location.href);
+        return previous.origin === game.origin && previous.pathname === game.pathname;
+      });
+    } catch (_) { return false; }
+  }
+  // Preserve the profile only for an in-app game return, not a fresh demo opening.
+  let profile = returningFromGame() ? readProfile() : null;
+  if (!profile) history.replaceState(null, '', '#/welcome');
   function render(focus = true) {
     const route = location.hash;
     const isProfile = !!profile && route === '#/profile';
@@ -43,7 +55,7 @@
       history.replaceState(null, '', '#/');
     }
     if (profile) {
-      ['username', 'mobile', 'gender'].forEach(field => { $(`profile-${field}`).textContent = profile[field] || 'Not provided'; });
+      ['username', 'mobile', 'department', 'plant', 'city'].forEach(field => { $(`profile-${field}`).textContent = profile[field] || 'Not provided'; });
       const initials = Array.from(profile.username.trim())[0].toLocaleUpperCase();
       $('header-avatar').textContent = initials;
       $('profile-avatar').textContent = initials;
@@ -58,17 +70,14 @@
   $(formId).addEventListener('submit', event => {
     event.preventDefault();
     const next = {};
-    const fields = formId === 'registration-form' ? ['username', 'mobile', 'gender'] : ['username', 'mobile'];
+    const fields = ['username'];
     for (const field of fields) {
       const input = $(`${prefix}-${field}`);
       next[field] = input.value.trim();
       input.setCustomValidity(next[field] ? '' : 'Please complete this field.');
       if (!input.reportValidity()) return;
     }
-    if (formId === 'login-form') {
-      const saved = readProfile();
-      next.gender = saved && saved.username === next.username && saved.mobile === next.mobile && typeof saved.gender === 'string' ? saved.gender : '';
-    }
+    for (const field of ['mobile', 'department', 'plant', 'city']) next[field] = '';
     try { localStorage.setItem(key, JSON.stringify(next)); }
     catch (_) {
       $(errorId).textContent = 'Your details could not be saved. Please allow browser storage and try again.';
@@ -95,7 +104,7 @@
     }
     profile = null;
     $('logout-error').hidden = true;
-    ['username', 'mobile', 'gender'].forEach(field => { $(`profile-${field}`).textContent = ''; });
+    ['username', 'mobile', 'department', 'plant', 'city'].forEach(field => { $(`profile-${field}`).textContent = ''; });
     $('profile-avatar').textContent = '';
     $('header-avatar').textContent = '';
     location.hash = '#/login';

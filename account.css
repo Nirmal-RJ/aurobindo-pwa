@@ -1,6 +1,6 @@
 .account-pending .site-header,.account-pending #main-content,.account-pending .skip-link{display:none}
 .account-shell{width:100%;min-height:100svh;padding:48px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:"Segoe UI",Arial,sans-serif}
-.account-brand{display:flex;justify-content:center;margin-bottom:32px}.account-brand img{display:block;width:156px;height:88px;object-fit:contain}
+.account-brand{display:flex;justify-content:center;margin-bottom:32px}.account-brand img{display:block;width:78px;height:44px;object-fit:contain}
 .welcome-layout{width:100%;max-width:440px}.account-copy{padding:36px;background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:0 8px 32px #173d3206}
 .account-copy h2{font-size:30px;font-weight:650;letter-spacing:-.8px;line-height:1.35;margin:0 0 14px}.account-copy h2:focus,.profile-content h1:focus{outline:none}.account-description{font-size:14px;line-height:1.7;color:var(--muted);margin:0}
 .account-primary{width:100%;display:flex;align-items:center;justify-content:center;min-height:50px;padding:14px 20px;background:#226451;color:#fff;text-decoration:none;border:0;border-radius:8px;font:inherit;font-size:14px;font-weight:650;transition:background .2s}.account-primary:hover{background:#174d40}.account-primary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
@@ -16,3 +16,5 @@
 @media(max-width:650px){.welcome-layout{grid-template-columns:1fr;max-width:440px;gap:20px}.account-heading{font-size:24px}.account-shell{justify-content:flex-start}}
 
 .account-mode{display:flex;width:100%;max-width:440px;padding:5px;gap:5px;border:1px solid var(--border);border-radius:12px;background:var(--toggle);margin-bottom:18px}.account-mode button{flex:1;min-height:44px;border:0;border-radius:8px;background:transparent;color:var(--muted);font-size:14px;font-weight:650}.account-mode button[aria-pressed="true"]{background:var(--surface);color:var(--accent);box-shadow:0 2px 6px #173d3210}.logout-button{background:#c62828;color:#fff;border-color:#c62828}.logout-button:hover{background:#a51d1d;border-color:#a51d1d}.logout-button:focus-visible{outline:3px solid #e05252;outline-offset:3px}
+
+.account-form input:disabled{background:var(--toggle);color:var(--muted);opacity:.5;cursor:not-allowed;border-style:dashed}.account-form .disabled-label{color:var(--muted);opacity:.65}

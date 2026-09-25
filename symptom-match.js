@@ -661,17 +661,11 @@
     }
   }
 
-  let activeTheme = 'light';
-  try {
-    const saved = localStorage.getItem('aurobindo-theme');
-    if (saved === 'dark' || saved === 'light') activeTheme = saved;
-    else if (document.documentElement.dataset.theme) activeTheme = document.documentElement.dataset.theme;
-  } catch (_) {}
-  syncThemeUI(activeTheme);
+  syncThemeUI('dark');
 
   if (el.btnTheme) {
     el.btnTheme.addEventListener('click', () => {
-      const current = document.documentElement.dataset.theme || 'light';
+      const current = document.documentElement.dataset.theme || 'dark';
       const nextTheme = current === 'light' ? 'dark' : 'light';
       syncThemeUI(nextTheme);
       try { localStorage.setItem('aurobindo-theme', nextTheme); } catch (_) {}

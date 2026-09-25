@@ -217,11 +217,11 @@
 
   function updateTheme() {
     const dark = document.documentElement.dataset.theme === 'dark';
-    byId('theme').textContent = dark ? '☀' : '☾';
-    byId('theme').setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} theme`);
+    if (byId('theme')) byId('theme').textContent = dark ? '☀' : '☾';
+    byId('theme')?.setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} theme`);
     document.querySelector('meta[name="theme-color"]').content = dark ? '#100e1a' : '#f8f4ff';
   }
-  byId('theme').addEventListener('click', () => {
+  byId('theme')?.addEventListener('click', () => {
     const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
     document.documentElement.dataset.theme = theme;
     try { localStorage.setItem('aurobindo-theme', theme); } catch (_) { /* Theme still works without storage. */ }

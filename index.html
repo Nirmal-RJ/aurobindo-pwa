@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f8f4ff">
+  <meta name="theme-color" content="#100d25">
   <meta name="description" content="The Aurobindo Pharmacy community hub. Celebrate, play and shine together.">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,20 +14,17 @@
   <link rel="apple-touch-icon" href="./icons/icon-192.png">
   <link rel="manifest" href="./manifest.webmanifest">
   <script>
-    try {
-      const t = localStorage.getItem('aurobindo-theme') || (document.cookie.match(/(?:^|;\s*)aurobindo-theme=([^;]*)/) || [])[1];
-      if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
-    } catch (_) { }
+
     try {
       const l = localStorage.getItem('aurobindo-language') || (document.cookie.match(/(?:^|;\s*)aurobindo-language=([^;]*)/) || [])[1];
       if (l === 'te' || l === 'hi' || l === 'en') document.documentElement.lang = l;
     } catch (_) { }
   </script>
-  <link rel="stylesheet" href="./styles.css?v=27">
+  <link rel="stylesheet" href="./styles.css?v=29">
   <script src="./tile-match.js?v=18" defer></script>
-  <link rel="stylesheet" href="./account.css?v=4">
-  <script src="./account.js?v=4" defer></script>
-  <script src="./app.js?v=21" defer></script>
+  <link rel="stylesheet" href="./account.css?v=5">
+  <script src="./account.js?v=6" defer></script>
+  <script src="./app.js?v=22" defer></script>
   <link rel="stylesheet" href="./leaderboard.css?v=5">
   <script src="./hero-carousel.js?v=2" defer></script>
 </head>
@@ -45,13 +42,17 @@
         <h2 id="registration-title">Register</h2>
         <p class="account-description">New here? Create your profile.</p>
         <form id="registration-form" class="account-form">
-          <label for="registration-username">Username <span>*</span></label>
-          <input id="registration-username" name="username" autocomplete="username" placeholder="Enter your username" required>
-          <label for="registration-mobile">Mobile number <span>*</span></label>
-          <input id="registration-mobile" name="mobile" type="tel" autocomplete="tel" placeholder="Enter your mobile number" required>
-          <label for="registration-gender">Gender <span>*</span></label>
-          <select id="registration-gender" name="gender" required><option value="" disabled selected>Select your gender</option><option>Female</option><option>Male</option><option>Other</option><option>Prefer not to say</option></select>
-          <p class="account-fine">All fields are required.</p>
+          <label for="registration-username">Name <span>*</span></label>
+          <input id="registration-username" name="name" autocomplete="name" placeholder="Enter your name" required>
+          <label class="disabled-label" for="registration-mobile">Mobile number</label>
+          <input id="registration-mobile" name="mobile" type="tel" autocomplete="tel" placeholder="" disabled>
+          <label class="disabled-label" for="registration-department">Department</label>
+          <input id="registration-department" name="department" placeholder="" disabled>
+          <label class="disabled-label" for="registration-plant">Plant</label>
+          <input id="registration-plant" name="plant" placeholder="" disabled>
+          <label class="disabled-label" for="registration-city">City</label>
+          <input id="registration-city" name="city" placeholder="" disabled>
+          <p class="account-fine">Only your name is required for this demo.</p>
           <p id="registration-error" class="account-error" role="alert" hidden></p>
           <button class="account-primary" type="submit">Register</button>
         </form>
@@ -60,11 +61,11 @@
         <h2 id="login-title" tabindex="-1">Log in</h2>
         <p class="account-description">Welcome back. Enter your details.</p>
         <form id="login-form" class="account-form">
-          <label for="account-username">Username <span>*</span></label>
-          <input id="account-username" name="username" autocomplete="username" placeholder="Enter your username" required>
-          <label for="account-mobile">Mobile number <span>*</span></label>
-          <input id="account-mobile" name="mobile" type="tel" autocomplete="tel" placeholder="Enter your mobile number" required>
-          <p class="account-fine">All fields are required.</p>
+          <label for="account-username">Name <span>*</span></label>
+          <input id="account-username" name="name" autocomplete="name" placeholder="Enter your name" required>
+          <label class="disabled-label" for="account-mobile">Mobile number</label>
+          <input id="account-mobile" name="mobile" type="tel" autocomplete="tel" placeholder="" disabled>
+          <p class="account-fine">Only your name is required for this demo.</p>
           <p id="account-error" class="account-error" role="alert" hidden></p>
           <button class="account-primary" type="submit">Log in</button>
         </form>
@@ -122,8 +123,8 @@
   <header class="site-header">
     <div class="header-inner">
       <div class="brand" aria-label="Aurobindo Pharmacy">
-        <div class="brand-logo"><img src="./logo.png" alt="Aurobindo — Committed to healthier life!" width="618"
-            height="350"></div>
+        <div class="brand-demo"><div class="brand-logo"><img src="./logo.png" alt="Aurobindo — Committed to healthier life!" width="618"
+            height="350"></div><span class="demo-label">DEMO APP</span></div>
         <div class="brand-copy"><strong data-i18n="pharmacy">PHARMACY</strong><span data-i18n="community">Our people.
             Our stage.</span></div>
       </div>
@@ -154,15 +155,7 @@
                 aria-hidden="true">✓</span></button>
           </div>
         </div>
-        <span class="control-divider"></span>
-        <div class="theme-switch" role="group" aria-label="Color theme" data-i18n-aria="theme"><button type="button"
-            data-set-theme="light" aria-label="Light theme" data-i18n-aria="light" aria-pressed="true"><svg
-              class="icon">
-              <use href="#i-sun" />
-            </svg></button><button type="button" data-set-theme="dark" aria-label="Dark theme" data-i18n-aria="dark"
-            aria-pressed="false"><svg class="icon">
-              <use href="#i-moon" />
-            </svg></button></div>
+
       </div>
     </div>
   </header>
@@ -174,7 +167,7 @@
         <div class="profile-content"><div id="profile-avatar" class="profile-avatar" aria-hidden="true"></div>
           <p class="account-eyebrow">YOUR LITTLE CORNER</p><h1 id="profile-title" tabindex="-1">My profile</h1>
           <p class="profile-welcome">Great to have you in the celebration.</p>
-          <dl class="profile-details"><div><dt>Username</dt><dd id="profile-username"></dd></div><div><dt>Mobile number</dt><dd id="profile-mobile"></dd></div><div><dt>Gender</dt><dd id="profile-gender"></dd></div></dl>
+          <dl class="profile-details"><div><dt>Name</dt><dd id="profile-username"></dd></div><div><dt>Mobile number</dt><dd id="profile-mobile"></dd></div><div><dt>Department</dt><dd id="profile-department"></dd></div><div><dt>Plant</dt><dd id="profile-plant"></dd></div><div><dt>City</dt><dd id="profile-city"></dd></div></dl>
           <p id="logout-error" class="account-error" role="alert" hidden></p>
           <button id="account-logout" class="logout-button" type="button">Log out <span aria-hidden="true">↗</span></button>
         </div>
@@ -208,9 +201,7 @@
           <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
         </div>
         <div class="hero-copy" id="hero-copy-slide">
-          <div class="hero-eyebrow"><svg class="icon">
-              <use href="#i-spark" />
-            </svg><span data-i18n="heroEyebrow">BIG ENERGY. ONE FAMILY.</span></div>
+          <span class="hero-demo-label">DEMO APP</span>          
           <h1 id="hero-title" class="sr-only">HPLC Celebrity League</h1>
           <div class="hero-logo-wrap">
             <img src="./assets/hpcl-logo.png" alt="HPLC Celebrity League" class="hero-hpcl-logo" width="500"
@@ -359,25 +350,10 @@
               a great day</span></div>
         </div>
         <div class="activity-grid">
-          <a class="activity-card coral" href="#/fun-corner" data-activity="fun"><span class="card-top"><span
-                class="card-icon"><svg>
-                  <use href="#i-masks" />
-                </svg></span><span class="card-number">01</span></span><span class="card-title" data-i18n="funTitle">Fun
-              Corner</span><span class="card-description" data-i18n="funDescription">Small breaks. Big smiles. Good
-              vibes only.</span><span class="card-bottom"><span class="card-tag" data-i18n="funTag">THE HAPPY
-                PLACE</span><span class="card-spark" aria-hidden="true">✦</span></span></a>
-          <a class="activity-card gold" href="#/premier-league" data-activity="league"><span class="card-top"><span
-                class="card-icon"><svg>
-                  <use href="#i-trophy" />
-                </svg></span><span class="card-number">02</span></span><span class="card-title"
-              data-i18n="leagueTitle">Premier League</span><span class="card-description"
-              data-i18n="leagueDescription">One team. One dream. All the glory.</span><span class="card-bottom"><span
-                class="card-tag" data-i18n="leagueTag">WHERE CHAMPIONS RISE</span><span class="card-spark"
-                aria-hidden="true">✦</span></span></a>
           <a class="activity-card lavender" href="#/games" data-activity="games"><span class="card-top"><span
                 class="card-icon"><svg>
                   <use href="#i-game" />
-                </svg></span><span class="card-number">03</span></span><span class="card-title"
+                </svg></span><span class="card-number">01</span></span><span class="card-title"
               data-i18n="gamesTitle">Games</span><span class="card-description" data-i18n="gamesDescription">Bring your
               A-game. Let the good times roll.</span><span class="card-bottom"><span class="card-tag"
                 data-i18n="gamesTag">CHALLENGE ACCEPTED</span><span class="card-spark"
@@ -385,11 +361,26 @@
           <a class="activity-card mint" href="#/score-board" data-activity="scores"><span class="card-top"><span
                 class="card-icon"><svg>
                   <use href="#i-chart" />
-                </svg></span><span class="card-number">04</span></span><span class="card-title"
+                </svg></span><span class="card-number">02</span></span><span class="card-title"
               data-i18n="scoresTitle">Score Board</span><span class="card-description" data-i18n="scoresDescription">Big
               efforts. Proud moments. Every point counts.</span><span class="card-bottom"><span class="card-tag"
                 data-i18n="scoresTag">FOLLOW THE ACTION</span><span class="card-spark"
                 aria-hidden="true">✦</span></span></a>
+          <a class="activity-card gold" href="#/premier-league" data-activity="league"><span class="card-top"><span
+                class="card-icon"><svg>
+                  <use href="#i-trophy" />
+                </svg></span><span class="card-number">03</span></span><span class="card-title"
+              data-i18n="leagueTitle">Premier League</span><span class="card-description"
+              data-i18n="leagueDescription">One team. One dream. All the glory.</span><span class="card-bottom"><span
+                class="card-tag" data-i18n="leagueTag">WHERE CHAMPIONS RISE</span><span class="card-spark"
+                aria-hidden="true">✦</span></span></a>
+          <a class="activity-card coral" href="#/fun-corner" data-activity="fun"><span class="card-top"><span
+                class="card-icon"><svg>
+                  <use href="#i-masks" />
+                </svg></span><span class="card-number">04</span></span><span class="card-title" data-i18n="funTitle">Fun
+              Corner</span><span class="card-description" data-i18n="funDescription">Small breaks. Big smiles. Good
+              vibes only.</span><span class="card-bottom"><span class="card-tag" data-i18n="funTag">THE HAPPY
+                PLACE</span><span class="card-spark" aria-hidden="true">✦</span></span></a>
           <a class="activity-card blue" href="#/about" data-activity="about"><span class="card-top"><span
                 class="card-icon"><svg>
                   <use href="#i-people" />
