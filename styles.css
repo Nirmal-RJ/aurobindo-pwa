@@ -58,6 +58,7 @@ html[lang="te"] .coming-copy h2,html[lang="hi"] .coming-copy h2{letter-spacing:0
 .is-games .coming-copy p{max-width:660px;font-size:13px}
 .is-games .coming-art,.is-games .home-cta,.is-games .coming-stage-foot{display:none}
 .game-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:19px;margin-top:32px}
+.poster-version-title{position:absolute;left:12px;right:12px;top:12px;margin:0;padding:10px 8px;border-radius:10px;background:#163e3ff2;color:#fff;text-align:center;font-size:clamp(11px,1.3vw,17px);line-height:1.3;box-shadow:0 3px 12px #0003}
 .game-poster{position:relative;isolation:isolate;border-radius:20px;background:transparent;color:#fff;border:none;box-shadow:none;transition:transform .3s;text-decoration:none;display:block}
 .poster-card-wrap{position:relative;width:100%;aspect-ratio:507/685;border-radius:20px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,0.35);transition:transform .3s cubic-bezier(0.16,1,0.3,1),box-shadow .3s ease}
 .poster-card-image{width:100%;height:100%;display:block;object-fit:cover;object-position:center bottom;border-radius:20px}

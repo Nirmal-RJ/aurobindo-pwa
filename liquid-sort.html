@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ecf4f6">
+  <title>Game 1 – Liquid Sort · Aurobindo Pharma</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="liquid-sort.css?v=2">
+  <script src="liquid-sort.js?v=2" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="index.html#/games"><img src="logo.png" alt="Aurobindo Pharma"><span>Aurobindo Pharma<small>GAME 01 · LIQUID SORT</small></span></a><a class="back" href="index.html#/games">← <span>Back to Games</span></a></header>
+  <main>
+    <section id="intro" class="panel intro" aria-labelledby="title" tabindex="-1">
+      <span class="eyebrow">A LITTLE POUR. THE RIGHT MIX.</span>
+      <div class="intro-tubes" aria-hidden="true">
+        <span class="tube" style="--chemical:var(--water)"><img src="assets/test-tube.png" alt=""><span class="tube-liquid" style="height:80%"></span></span>
+        <span class="tube" style="--chemical:var(--acn)"><img src="assets/test-tube.png" alt=""><span class="tube-liquid" style="height:65%"></span></span>
+        <span class="tube" style="--chemical:var(--meoh)"><img src="assets/test-tube.png" alt=""><span class="tube-liquid" style="height:50%"></span></span>
+      </div>
+      <h1 id="title">A drop of focus.<br><em>The perfect solution.</em></h1>
+      <p>Prepare each cleaning solution with the right solvent percentages. Tap a chemical tube to pour <strong>5%</strong> into your solution.</p>
+      <div class="facts"><span><strong>4</strong> rounds</span><span><strong>30 sec</strong> each round</span><span><strong>5%</strong> each tap</span></div>
+      <p class="intro-note">Your mixture is checked at 100%. Pours cannot be undone. The correct recipe is revealed after each round.</p>
+      <button id="play" class="primary" type="button">Let’s mix <span aria-hidden="true">→</span></button>
+    </section>
+
+    <section id="game" class="panel game" hidden aria-labelledby="game-title" tabindex="-1">
+      <div class="game-meta"><span id="progress" class="eyebrow">ROUND 1 OF 4</span><span id="running-score">Score 0 / 4</span></div>
+      <div class="game-heading"><h1 id="game-title">Prepare the solution</h1><strong id="seconds" role="timer">30 sec</strong></div>
+      <div id="timer" class="timer" role="progressbar" aria-label="Time remaining" aria-valuemin="0" aria-valuemax="30" aria-valuenow="30"><div id="timer-fill"></div></div>
+      <div class="tray-heading"><span class="eyebrow">CHOOSE A CHEMICAL</span><span>1 tap = 5%</span></div>
+      <div id="chemicals" class="chemicals" aria-label="Chemical tubes">
+        <button type="button" class="chemical" data-chemical="Water" style="--chemical:var(--water)" aria-label="Pour 5 percent Water"><span class="tube" aria-hidden="true"><img src="assets/test-tube.png" alt=""><span class="tube-liquid"></span></span><span class="chemical-name"><i></i>Water</span><small>+5%</small></button>
+        <button type="button" class="chemical" data-chemical="ACN" style="--chemical:var(--acn)" aria-label="Pour 5 percent ACN"><span class="tube" aria-hidden="true"><img src="assets/test-tube.png" alt=""><span class="tube-liquid"></span></span><span class="chemical-name"><i></i>ACN</span><small>+5%</small></button>
+        <button type="button" class="chemical" data-chemical="MeOH" style="--chemical:var(--meoh)" aria-label="Pour 5 percent MeOH"><span class="tube" aria-hidden="true"><img src="assets/test-tube.png" alt=""><span class="tube-liquid"></span></span><span class="chemical-name"><i></i>MeOH</span><small>+5%</small></button>
+      </div>
+      <div class="mixing-area">
+        <div class="receiver-wrap">
+          <span class="tube receiver" id="receiver" role="img" aria-label="Empty solution tube"><img src="assets/test-tube.png" alt=""><span id="mixture" class="mixture"></span></span>
+          <span class="fill-mark" id="fill-total">0<span>% filled</span></span>
+        </div>
+        <h2 id="solution-name">Column Cleaning</h2>
+        <div id="composition" class="composition" aria-label="Your mixture"></div>
+      </div>
+      <p id="feedback" class="feedback" role="status" aria-live="polite">Tap a chemical above to start pouring.</p>
+      <div id="review" class="review" hidden>
+        <div role="status" aria-live="polite"><strong id="outcome"></strong><p id="correct-recipe"></p></div>
+        <button id="next" class="primary" type="button">Next round →</button>
+      </div>
+    </section>
+
+    <section id="report" class="panel report" hidden aria-labelledby="report-title" tabindex="-1">
+      <span class="eyebrow">CHALLENGE COMPLETE</span><h1 id="report-title">Your results</h1>
+      <div class="score-circle"><strong id="final-score">0</strong><span>OUT OF 4</span></div>
+      <p id="report-message"></p><div id="results" class="results"></div>
+      <div class="actions"><button id="retry" class="primary" type="button">Play again ↻</button><a class="button" href="index.html#/games">Back to Games</a></div>
+    </section>
+  </main>
+</body>
+</html>

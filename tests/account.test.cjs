@@ -68,7 +68,7 @@ test('fresh openings always show welcome; logout clears profile but preserves th
 });
 
 test('all standalone game exits return to Games with the saved profile', () => {
- for (const game of ['cleaning-solution.html', 'symptom-match.html', 'chromatogram.html']) {
+ for (const game of ['cleaning-solution.html', 'liquid-sort.html', 'symptom-match.html', 'chromatogram.html']) {
   const app = account(JSON.stringify({username:'Demo'}), {hash:'#/games',referrer:`https://demo.test/app/${game}`});
   assert.equal(app.location.hash,'#/games');
   assert.equal(app.render(),false);

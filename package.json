@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.mjs",
     "dev": "node server.mjs",
-    "check": "node --check app.js && node --check account.js && node --check hero-carousel.js && node --check tile-match.js && node --check symptom-match.js && node --check cleaning-solution.js && node --check chromatogram.js && node --check sw.js && node --check server.mjs",
+    "check": "node --check app.js && node --check account.js && node --check hero-carousel.js && node --check tile-match.js && node --check symptom-match.js && node --check cleaning-solution.js && node --check liquid-sort.js && node --check chromatogram.js && node --check sw.js && node --check server.mjs",
     "test": "node --test tests/*.test.cjs"
   }
 }
